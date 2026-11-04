@@ -1,0 +1,1861 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Restaurant Cevichería 635</title>
+<meta name="description" content="Restaurant Cevichería 635: ceviche, tiraditos y leche de tigre en Sullana. Mira la carta en 3D y reserva tu mesa por WhatsApp.">
+<!-- v3: whatsapp + modo ligero -->
+<meta name="theme-color" content="#16121C">
+<meta property="og:title" content="Restaurant Cevichería 635">
+<meta property="og:description" content="Arma tu ceviche en 3D y reserva por WhatsApp.">
+<meta property="og:type" content="restaurant">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Restaurant","name":"Restaurant Cevichería 635","servesCuisine":"Peruana, Cevichería","priceRange":"S/ 12 - S/ 58","address":{"@type":"PostalAddress","addressLocality":"Sullana","addressCountry":"PE"},"@id":"#r"}</script>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;800&family=Fraunces:opsz,wght@9..144,400..700&display=swap">
+<style>
+
+/* Noche de muelle con brillos de ají, cebolla y limón; una sola escena 3D detrás de todo */
+:root {
+  color-scheme: dark;
+  --noche: #16121C;
+  --noche-2: #221A2B;
+  --rosa: #C8667B;
+  --aji: #D8A04E;
+  --limon: #A8B872;
+  --mar: #4F6F94;
+  --leche: #F2ECDF;
+  --ink: #F2ECDF;
+  --muted: rgba(242, 236, 223, .72);
+  --display: var(--dfam);
+  --dfam: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
+  --dw: 600;
+  --dcase: uppercase;
+  --body: 'Figtree', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --gutter: clamp(16px, 4vw, 56px);
+  --base: #16121C;
+  --glow: #8E3F57;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { background: var(--noche); -webkit-text-size-adjust: 100%; }
+body { margin: 0; font-family: var(--body); font-size: 1.125rem; line-height: 1.6; color: var(--ink); background: var(--noche); overflow-x: hidden; }
+h1, h2, h3, p, ul, dl, dd { margin: 0; }
+ul { padding: 0; list-style: none; }
+a { color: inherit; }
+button, input, select { font: inherit; }
+:focus-visible { outline: 3px solid var(--aji); outline-offset: 3px; border-radius: 6px; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+
+.wide {
+  font-family: var(--display);
+  font-weight: var(--dw);
+  text-transform: var(--dcase);
+  line-height: .9;
+  letter-spacing: -.01em;
+  text-wrap: balance;
+}
+
+/* ---------- Capas fijas ---------- */
+.bg {
+  position: fixed; inset: 0; z-index: 0;
+  background:
+    radial-gradient(70% 60% at 50% 58%, color-mix(in srgb, var(--glow) 80%, transparent) 0%, transparent 72%),
+    var(--base);
+}
+.title-layer { position: fixed; inset: 0; z-index: 1; pointer-events: none; display: grid; place-items: center; }
+.big-title {
+  font-family: var(--display); font-weight: var(--dw); text-transform: var(--dcase);
+  font-size: 19vw; line-height: .8; letter-spacing: -.02em;
+  --wd: 125;
+  font-variation-settings: 'wdth' var(--wd);
+  background: linear-gradient(180deg, #EBCB8A 0%, var(--aji) 38%, var(--rosa) 78%, #B93BFF 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  white-space: nowrap; will-change: transform;
+}
+.webgl { position: fixed; inset: 0; z-index: 2; width: 100%; height: 100%; display: block; pointer-events: none; }
+.milk { position: fixed; inset: 0; z-index: 3; pointer-events: none; opacity: 0;
+  background: radial-gradient(circle at 50% 50%, #FFFFFF 0%, #F3EFD9 55%, #E2DDBF 100%); }
+
+/* ---------- Navegación ---------- */
+.nav {
+  position: fixed; inset: 0 0 auto; z-index: 20; height: 68px;
+  display: flex; align-items: center; gap: 28px;
+  padding: 0 var(--gutter);
+  color: var(--leche);
+  transition: background-color .3s;
+}
+.nav.solid { background: rgba(22, 18, 28, .88); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+.brand { font-family: var(--display); font-weight: var(--dw); text-transform: var(--dcase); font-size: 1.5rem; text-decoration: none; color: var(--aji); letter-spacing: -.01em; }
+.nav-links { display: flex; gap: 26px; margin-left: auto; }
+.nav-links a { text-decoration: none; font-weight: 600; font-size: 1rem; }
+.nav-links a:hover { text-decoration: underline; text-underline-offset: 6px; }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 48px; padding: 0 24px; border-radius: 999px; border: 0; cursor: pointer; font-weight: 800; font-size: 1rem; text-decoration: none; white-space: nowrap; transition: transform .15s, background-color .2s; }
+.btn:active { transform: scale(.97); }
+.btn-nav { min-height: 42px; background: var(--rosa); color: #fff; }
+.btn-nav:hover { background: #ff4c9c; }
+
+/* ---------- Escenario 3D ---------- */
+.stage { position: relative; z-index: 4; height: 100vh; height: 100svh; }
+.stage-ui { position: absolute; inset: 0; overflow: hidden; }
+.panel { position: absolute; opacity: 0; visibility: hidden; }
+
+.p-hero { left: 0; right: 0; bottom: max(28px, 5vh); display: grid; justify-items: center; gap: 14px; text-align: center; opacity: 1; visibility: visible; padding: 0 var(--gutter); }
+.kicker { font-weight: 800; font-size: clamp(1rem, 1.6vw, 1.25rem); }
+.hint { display: flex; flex-direction: column; align-items: center; font-size: .95rem; font-weight: 600; color: var(--muted); }
+.hint svg { animation: bob 1.6s ease-in-out infinite; }
+@keyframes bob { 50% { transform: translateY(6px); } }
+
+.p-six { left: var(--gutter); bottom: 12vh; max-width: min(36rem, calc(100% - 2 * var(--gutter))); display: grid; gap: 16px; }
+.p-six h2 { font-size: clamp(2.4rem, 5.6vw, 5.4rem); color: var(--aji); }
+.p-six p { font-size: clamp(1.05rem, 1.5vw, 1.25rem); font-weight: 600; max-width: 34ch; }
+
+.p-explode { left: var(--gutter); bottom: 7vh; }
+.p-explode h2 { font-size: clamp(2.4rem, 6vw, 5.8rem); color: var(--leche); }
+
+.p-dive { left: 0; right: 0; bottom: 10vh; text-align: center; padding: 0 var(--gutter); }
+.p-dive h2 { font-size: clamp(2.2rem, 6.4vw, 6rem); color: var(--leche); }
+.p-fondo { left: 0; right: 0; top: 50%; transform: translateY(-50%); text-align: center; padding: 0 var(--gutter); z-index: 5; }
+.p-fondo p { font-size: clamp(2.6rem, 8vw, 8rem); color: #16121C; }
+
+/* Etiquetas del despiece */
+.labels { position: absolute; inset: 0; pointer-events: none; }
+.lbl { position: absolute; left: 0; top: 0; display: flex; align-items: center; gap: 10px; opacity: 0; white-space: nowrap; will-change: transform, opacity; }
+.lbl .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--aji); box-shadow: 0 0 0 4px rgba(255, 178, 26, .25); flex: none; }
+.lbl .line { width: 36px; height: 2px; background: rgba(242, 236, 223, .55); flex: none; }
+.lbl .txt { display: grid; line-height: 1.2; }
+.lbl b { font-family: var(--display); font-weight: var(--dw); text-transform: var(--dcase); font-size: clamp(.95rem, 1.5vw, 1.3rem); }
+.lbl small { font-size: .9rem; color: var(--muted); }
+.lbl.left { flex-direction: row-reverse; text-align: right; }
+
+/* Carrusel de platos */
+.dishes { position: absolute; inset: 0; pointer-events: none; }
+.dish-info { position: absolute; left: var(--gutter); bottom: 9vh; max-width: min(34rem, calc(100% - 2 * var(--gutter))); opacity: 0; color: var(--ink); display: grid; gap: 10px; }
+.dish-count { font-weight: 800; font-size: 1rem; }
+.dish-name { font-family: var(--display); font-weight: var(--dw); text-transform: var(--dcase); font-size: clamp(2.4rem, 6.2vw, 6rem); line-height: .88; text-wrap: balance; }
+.dish-desc { font-size: clamp(1.05rem, 1.5vw, 1.25rem); font-weight: 600; max-width: 32ch; }
+.dish-price { font-family: var(--display); font-weight: var(--dw); font-size: clamp(2rem, 3.6vw, 3.2rem); line-height: 1; }
+
+/* ---------- Secciones normales ---------- */
+.inner { max-width: 1040px; margin: 0 auto; }
+.carta { position: relative; z-index: 6; background: var(--aji); color: var(--noche); padding: clamp(90px, 13vh, 150px) var(--gutter); }
+.carta h2 { font-size: clamp(3.4rem, 10vw, 8.6rem); margin-bottom: 34px; }
+.tabs { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 26px; }
+.tabs button { min-height: 46px; padding: 0 22px; border-radius: 999px; cursor: pointer; border: 2.5px solid var(--noche); background: transparent; color: var(--noche); font-weight: 800; }
+.tabs button:hover { background: rgba(22, 18, 28, .08); }
+.tabs button[aria-selected="true"] { background: var(--noche); color: var(--aji); }
+.menu { max-width: 820px; }
+.menu li { display: flex; justify-content: space-between; align-items: baseline; gap: 24px; padding: 20px 0; border-bottom: 2px solid rgba(22, 18, 28, .16); }
+.menu h3 { font-size: 1.35rem; font-weight: 800; line-height: 1.25; }
+.menu p { color: rgba(22, 18, 28, .74); font-size: 1.02rem; margin-top: 2px; }
+.menu .card-price { font-family: var(--display); font-weight: var(--dw); font-size: 1.8rem; white-space: nowrap; }
+
+.reservar { position: relative; z-index: 6; background: var(--noche); padding: clamp(90px, 13vh, 150px) var(--gutter); }
+.reservar-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 6vw, 80px); align-items: start; }
+.reservar h2 { font-size: clamp(3rem, 7vw, 6.4rem); color: var(--rosa); margin-bottom: 22px; }
+.reservar-copy p { max-width: 34ch; margin-bottom: 24px; color: var(--muted); }
+.datos { display: grid; gap: 10px; margin-bottom: 28px; }
+.datos div { display: grid; grid-template-columns: 6.5rem 1fr; gap: 12px; }
+.datos dt { font-weight: 800; color: var(--aji); }
+.btn-wa { background: var(--limon); color: var(--noche); }
+.btn-wa:hover { background: #b0ef4f; }
+.wa-note { margin-top: 12px; font-size: .98rem; min-height: 1.6em; color: var(--muted); }
+.form { background: var(--leche); color: var(--noche); border-radius: 26px; padding: clamp(22px, 3vw, 36px); display: grid; gap: 18px; }
+.field { display: grid; gap: 6px; }
+.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.field label, .field .label { font-weight: 800; font-size: .95rem; }
+.field input, .field select { min-height: 50px; padding: 0 14px; border-radius: 12px; border: 2px solid #CFC6D6; background: #fff; color: var(--noche); width: 100%; color-scheme: light; }
+.field input:focus, .field select:focus { outline: none; border-color: var(--noche); box-shadow: 0 0 0 3px rgba(255, 46, 138, .35); }
+.field input[aria-invalid="true"] { border-color: #8E3F57; }
+.stepper { display: inline-flex; align-items: center; gap: 8px; }
+.stepper button { width: 48px; height: 48px; border-radius: 50%; border: 2.5px solid var(--noche); background: transparent; color: var(--noche); font-size: 1.4rem; font-weight: 800; cursor: pointer; }
+.stepper output { min-width: 2.4ch; text-align: center; font-family: var(--display); font-weight: var(--dw); font-size: 2rem; }
+.btn-reservar { width: 100%; min-height: 54px; background: var(--rosa); color: #fff; font-size: 1.05rem; }
+.btn-reservar:hover { background: #ff4c9c; }
+.form-error { color: #B0124F; font-weight: 700; }
+.form-error:empty { display: none; }
+.form-ok { padding: 16px 18px; border-radius: 14px; background: #E6F7CC; color: #23401A; font-weight: 700; }
+.form-ok small { display: block; font-weight: 400; margin-top: 4px; }
+
+.footer { position: relative; z-index: 6; background: var(--noche); border-top: 1px solid rgba(242, 236, 223, .1); padding: 56px var(--gutter) 64px; text-align: center; display: grid; gap: 8px; justify-items: center; }
+.footer .brand { font-size: 2.6rem; }
+.footer .demo { font-size: .9rem; color: var(--muted); }
+
+@media (max-width: 760px) {
+  .p-six h2, .p-explode h2, .p-dive h2 { font-size: clamp(1.9rem, 9vw, 2.6rem); }
+  .dish-name { font-size: clamp(2rem, 10vw, 2.8rem); }
+  .lbl b { font-size: .85rem; }
+  .nav-links { display: none; }
+  .nav { gap: 12px; }
+  .btn-nav { margin-left: auto; padding: 0 16px; }
+  .reservar-grid { grid-template-columns: 1fr; }
+  .p-six { bottom: 7vh; }
+  .dish-info { bottom: 6vh; }
+  .lbl .line { width: 16px; }
+  .lbl small { display: none; }
+}
+@media (max-aspect-ratio: 1/1) {
+  .title-layer { place-items: start center; padding-top: 17vh; }
+  .big-title { font-size: 20vw; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hint svg { animation: none; }
+}
+
+/* ---------- Selector de tipografía (prueba) ---------- */
+:root[data-font="fraunces"] { --dfam: 'Fraunces', Georgia, serif; --dw: 500; --dcase: none; }
+:root[data-font="oswald"] { --dfam: 'Oswald', 'Arial Narrow', sans-serif; --dw: 500; --dcase: uppercase; }
+:root[data-font="yellowtail"] { --dfam: 'Yellowtail', 'Brush Script MT', cursive; --dw: 400; --dcase: none; }
+:root[data-font="yellowtail"] .big-title { line-height: 1.1; padding: 0 .1em; }
+:root[data-font="archivo"] .big-title, :root:not([data-font]) .big-title { --wd: 108; }
+.fontpick {
+  position: fixed; z-index: 30; right: max(16px, env(safe-area-inset-right, 0px)); bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+  display: flex; align-items: center; gap: 6px; flex-wrap: wrap; justify-content: flex-end;
+  max-width: calc(100% - 32px);
+  padding: 8px; border-radius: 18px; background: rgba(22, 18, 28, .82); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(242, 236, 223, .14); color: var(--leche);
+}
+.fontpick span { font-size: .85rem; font-weight: 700; padding: 0 6px; }
+.fontpick button { min-height: 36px; padding: 0 12px; border-radius: 999px; border: 1.5px solid rgba(242, 236, 223, .35); background: transparent; color: var(--leche); cursor: pointer; font-size: .95rem; }
+.fontpick button[aria-pressed="true"] { background: var(--aji); border-color: var(--aji); color: var(--noche); font-weight: 800; }
+.fontpick button[data-f="archivo"] { font-family: 'Archivo', sans-serif; font-weight: 600; }
+.fontpick button[data-f="fraunces"] { font-family: 'Fraunces', serif; }
+.fontpick button[data-f="oswald"] { font-family: 'Oswald', sans-serif; text-transform: uppercase; }
+.fontpick button[data-f="yellowtail"] { font-family: 'Yellowtail', cursive; font-size: 1.1rem; }
+
+/* ---------- Luz de cine: viñeta y grano ---------- */
+.vignette { position: fixed; inset: 0; z-index: 3; pointer-events: none;
+  background: radial-gradient(ellipse 75% 70% at 50% 52%, transparent 40%, rgba(6, 0, 12, .55) 80%, rgba(6, 0, 12, .85) 100%); }
+.grain { position: fixed; inset: -50%; z-index: 3; pointer-events: none; opacity: .09; mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  animation: grain 1s steps(4) infinite; }
+@keyframes grain { 25% { transform: translate(-3%, 2%); } 50% { transform: translate(2%, -3%); } 75% { transform: translate(-2%, -1%); } }
+
+/* ---------- Tarjetas con color ---------- */
+.carta { background: var(--noche); color: var(--leche); }
+.carta h2 { color: var(--aji); }
+.tabs button { border-color: var(--leche); color: var(--leche); }
+.tabs button:hover { background: rgba(242, 236, 223, .1); }
+.tabs button[aria-selected="true"] { background: var(--aji); border-color: var(--aji); color: var(--noche); }
+.menu { max-width: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: 16px; }
+.menu li { display: grid; align-content: space-between; gap: 22px; min-height: 190px; padding: 24px; border: 0; border-radius: 24px; transition: transform .2s; }
+.menu li:hover { transform: translateY(-4px) rotate(-.6deg); }
+.menu li:nth-child(4n+1) { background: var(--rosa); color: #fff; }
+.menu li:nth-child(4n+2) { background: var(--mar); color: #fff; }
+.menu li:nth-child(4n+3) { background: var(--aji); color: var(--noche); }
+.menu li:nth-child(4n+4) { background: var(--limon); color: var(--noche); }
+.menu h3 { font-size: 1.45rem; }
+.menu p { color: inherit; opacity: .82; }
+.menu .card-price { font-size: 2.2rem; line-height: 1; }
+.form { background: var(--mar); color: #fff; box-shadow: 0 30px 80px -30px rgba(36, 87, 255, .7); }
+.field input, .field select { border-color: transparent; }
+.field input:focus, .field select:focus { border-color: var(--aji); box-shadow: 0 0 0 3px rgba(255, 178, 26, .5); }
+.stepper button { border-color: #fff; color: #fff; }
+.stepper button:hover { background: rgba(255, 255, 255, .14); }
+.form-ok { background: var(--limon); color: var(--noche); }
+.form-error { color: #FFD1E4; }
+@media (prefers-reduced-motion: reduce) { .grain { animation: none; } .menu li { transition: none; } }
+.menu[hidden] { display: none; }
+
+/* ---------- Tarjetas como botones ---------- */
+.menu li { padding: 0; display: block; min-height: 0; }
+.card { all: unset; box-sizing: border-box; cursor: pointer; display: grid; align-content: space-between; gap: 22px; width: 100%; height: 100%; min-height: 200px; padding: 24px; border-radius: 24px; }
+.card:focus-visible { outline: 3px solid var(--leche); outline-offset: 3px; }
+.card-top { display: grid; gap: 6px; }
+.card-name { font-family: var(--display); font-weight: 600; font-size: 1.6rem; line-height: 1.1; }
+.card-desc { font-size: 1.02rem; opacity: .85; }
+.card-price { font-family: var(--display); font-weight: 600; font-size: 2.2rem; line-height: 1; }
+.card-cta { display: inline-flex; align-items: center; gap: 8px; font-weight: 800; font-size: .95rem; justify-self: start; padding: 8px 14px; border-radius: 999px; background: rgba(22, 18, 28, .16); }
+.card-cta::before { content: ""; width: 0; height: 0; border-left: 9px solid currentColor; border-top: 6px solid transparent; border-bottom: 6px solid transparent; }
+.ver-btn { justify-self: start; margin-top: 6px; min-height: 46px; padding: 0 20px; border-radius: 999px; border: 2px solid currentColor; background: transparent; color: inherit; font-weight: 800; cursor: pointer; }
+.ver-btn:hover { background: rgba(255, 255, 255, .16); }
+
+/* ---------- Ficha de cine ---------- */
+.ficha { position: fixed; inset: 0; z-index: 50; background: #07020D; color: var(--leche); overflow: hidden; }
+.ficha-gl { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.bar { position: absolute; left: 0; right: 0; height: 9vh; background: #000; z-index: 2; transform: scaleY(0); }
+.bar-top { top: 0; transform-origin: top; }
+.bar-bottom { bottom: 0; transform-origin: bottom; }
+.ficha-info {
+  position: absolute; z-index: 3; right: max(var(--gutter), env(safe-area-inset-right, 0px)); top: 50%; transform: translateY(-50%);
+  width: min(28rem, 40vw); display: grid; gap: 14px;
+}
+.ficha-cat { font-weight: 800; color: var(--aji); font-size: 1rem; }
+.ficha-name { font-family: var(--display); font-weight: 600; font-size: clamp(2.2rem, 4.6vw, 4.4rem); line-height: .95; text-wrap: balance; }
+.ficha-desc { color: var(--muted); max-width: 34ch; }
+.ficha-steps { list-style: none; padding: 0; margin: 6px 0 0; display: grid; gap: 4px; counter-reset: paso; }
+.ficha-steps li { counter-increment: paso; display: grid; grid-template-columns: 2rem 1fr; gap: 10px; align-items: baseline; padding: 8px 0; border-top: 1px solid rgba(242, 236, 223, .12); opacity: .22; transition: opacity .35s, transform .35s; transform: translateX(10px); }
+.ficha-steps li::before { content: counter(paso); font-family: var(--display); font-size: 1.1rem; color: var(--aji); }
+.ficha-steps li.on { opacity: 1; transform: none; }
+.ficha-steps b { display: block; font-weight: 800; }
+.ficha-steps small { color: var(--muted); font-size: .92rem; }
+.ficha-foot { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-top: 10px; }
+.ficha-price { font-family: var(--display); font-weight: 600; font-size: 2.6rem; line-height: 1; margin-right: 8px; }
+.btn-ghost { background: transparent; border: 2px solid rgba(242, 236, 223, .5); color: var(--leche); min-height: 42px; }
+.btn-ghost:hover { border-color: var(--leche); }
+.ficha-close { position: absolute; z-index: 4; top: calc(16px + env(safe-area-inset-top, 0px)); right: max(16px, env(safe-area-inset-right, 0px)); width: 48px; height: 48px; border-radius: 50%; border: 0; background: rgba(242, 236, 223, .14); color: var(--leche); cursor: pointer; display: grid; place-items: center; }
+.ficha-close:hover { background: rgba(242, 236, 223, .26); }
+@media (max-width: 760px), (max-aspect-ratio: 1/1) {
+  .ficha-info { right: 16px; left: 16px; top: auto; bottom: 16px; transform: none; width: auto; max-height: 52vh; overflow-y: auto; gap: 8px; padding: 16px; border-radius: 20px; background: rgba(7, 2, 13, .78); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+  .ficha-name { font-size: 2rem; }
+  .ficha-desc { display: none; }
+  .ficha-steps li { padding: 4px 0; }
+  .ficha-steps small { display: none; }
+  .ficha-price { font-size: 2rem; }
+  .bar { height: 5vh; }
+}
+.card { font-family: var(--body); font-size: 1rem; line-height: 1.4; text-align: left; white-space: normal; color: inherit; }
+@media (max-height: 920px) and (min-width: 761px) {
+  .ficha-steps small { display: none; }
+  .ficha-steps li { padding: 5px 0; }
+  .ficha-info { gap: 10px; }
+  .ficha-name { font-size: clamp(2rem, 3.8vw, 3.4rem); }
+}
+
+.nav { padding-left: max(var(--gutter), env(safe-area-inset-left, 0px)); padding-right: max(var(--gutter), env(safe-area-inset-right, 0px)); }
+/* ---------- Carta completa ---------- */
+.tabs .tab-todo { border-style: dashed; }
+.fullmenu[hidden] { display: none; }
+.fullmenu { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 18px 40px; }
+.fm-note { grid-column: 1 / -1; color: var(--leche); opacity: .85; font-size: 1.05rem; }
+.fm-cat { padding: 24px; border-radius: 24px; }
+.fm-cat:nth-of-type(1) { background: var(--rosa); color: #fff; }
+.fm-cat:nth-of-type(2) { background: var(--mar); color: #fff; }
+.fm-cat:nth-of-type(3) { background: var(--aji); color: var(--noche); }
+.fm-cat:nth-of-type(4) { background: var(--limon); color: var(--noche); }
+.fm-title { font-family: var(--dfam); font-weight: var(--dw); font-size: 2rem; margin-bottom: 8px; }
+.fm-cat ul { list-style: none; margin: 0; padding: 0; }
+.fm-cat li + li { border-top: 2px dashed currentColor; border-top-color: rgba(255,255,255,.35); }
+.fm-cat:nth-of-type(3) li + li, .fm-cat:nth-of-type(4) li + li { border-top-color: rgba(18,6,28,.28); }
+.fm-row { all: unset; box-sizing: border-box; display: grid; gap: 4px; width: 100%; padding: 16px 0; cursor: pointer; }
+.fm-row:focus-visible { outline: 3px solid var(--leche); outline-offset: 2px; border-radius: 8px; }
+.fm-head { display: flex; align-items: baseline; gap: 10px; }
+.fm-name { font-family: var(--dfam); font-weight: 600; font-size: 1.35rem; line-height: 1.15; }
+.fm-dots { flex: 1; border-bottom: 2px dotted currentColor; opacity: .5; transform: translateY(-4px); min-width: 16px; }
+.fm-price { font-family: var(--dfam); font-weight: 600; font-size: 1.35rem; white-space: nowrap; }
+.fm-desc { font-size: 1rem; opacity: .92; }
+.fm-ing { font-size: .9rem; opacity: .8; }
+.fm-ing b { font-weight: 800; }
+.fm-cta { justify-self: start; margin-top: 6px; font-weight: 800; font-size: .88rem; padding: 6px 12px; border-radius: 999px; background: rgba(18,6,28,.2); }
+.fm-cta::before { content: "▶ "; font-size: .7em; }
+.fm-row:hover .fm-cta { background: var(--noche); color: var(--leche); }
+/* ---------- Pulido: tono suave y detalles de interacción ---------- */
+:root { --ease-out: cubic-bezier(0.23, 1, 0.32, 1); }
+.btn, .card, .fm-row, .ver-btn, .tabs button, .ficha button { transition: transform 160ms var(--ease-out), background-color 160ms ease, color 160ms ease, border-color 160ms ease; }
+.btn:active, .card:active, .fm-row:active, .ver-btn:active, .tabs button:active, .ficha button:active { transform: scale(0.97); }
+.menu li { transition: transform 200ms var(--ease-out); }
+@media not all and (hover: hover) and (pointer: fine) { .menu li:hover { transform: none; } }
+.fm-cat { filter: saturate(.92); }
+.menu li { box-shadow: 0 1px 0 rgba(255,255,255,.08) inset, 0 18px 40px -24px rgba(0,0,0,.6); }
+@media (prefers-reduced-motion: reduce) { .btn, .card, .fm-row, .ver-btn { transition-duration: 1ms; } .btn:active, .card:active, .fm-row:active { transform: none; } }
+
+/* ---------- Pantalla de carga ---------- */
+.loader { position: fixed; inset: 0; z-index: 100; display: grid; place-content: center; justify-items: center; gap: 18px; background: var(--noche); color: var(--aji); transition: opacity .6s ease, visibility .6s; }
+.loader.done { opacity: 0; visibility: hidden; pointer-events: none; }
+.loader b { font-family: 'Fraunces', Georgia, serif; font-weight: 500; font-size: clamp(2.6rem, 12vw, 5rem); letter-spacing: -.02em; }
+.loader i { display: block; width: min(60vw, 260px); height: 3px; border-radius: 3px; background: rgba(242, 236, 223, .14); overflow: hidden; }
+.loader i::after { content: ""; display: block; height: 100%; width: 40%; background: linear-gradient(90deg, var(--aji), var(--rosa)); border-radius: 3px; animation: ldr 1.1s ease-in-out infinite; }
+@keyframes ldr { from { transform: translateX(-110%); } to { transform: translateX(260%); } }
+.loader small { color: var(--muted); font-size: .95rem; }
+/* ---------- Modo ligero (celular) ---------- */
+html.lite .grain { display: none; }
+html.lite .nav.solid { backdrop-filter: none; -webkit-backdrop-filter: none; background: rgba(22, 18, 28, .94); }
+html.lite .ficha-info { backdrop-filter: none; -webkit-backdrop-filter: none; background: rgba(7, 2, 13, .9); }
+html.lite .menu li { box-shadow: none; }
+html.lite .fm-cat { filter: none; }
+html.lite .vignette { display: none; }
+html.lite .bg::after { animation: none; }
+.fm-cat li[hidden] { display: none; }
+.fm-cat > .ver-btn { margin-top: 12px; }
+/* ---------- Brillo extra: luz que respira detrás del título ---------- */
+.bg::after { content: ""; position: absolute; inset: 0; background: radial-gradient(40% 34% at 50% 56%, rgba(216, 160, 78, .16), transparent 70%); animation: breathe 6s ease-in-out infinite; }
+@keyframes breathe { 50% { opacity: .45; transform: scale(1.08); } }
+.big-title { filter: drop-shadow(0 0 28px rgba(216, 160, 78, .28)); }
+html.lite .big-title { filter: none; }
+@media (prefers-reduced-motion: reduce) { .bg::after, .loader i::after { animation: none; } }
+.wa-float { position: fixed; z-index: 25; right: max(16px, env(safe-area-inset-right, 0px)); bottom: calc(16px + env(safe-area-inset-bottom, 0px)); min-height: 52px; padding: 0 20px; background: var(--limon); color: var(--noche); box-shadow: 0 10px 30px -8px rgba(0, 0, 0, .6); }
+.big-title{font-size:7.1vw}@media (max-aspect-ratio:1/1){.big-title{font-size:7.4vw}}
+</style>
+<script type="importmap">
+{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.min.js", "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/" } }
+</script>
+<script>document.documentElement.dataset.font = 'fraunces';</script>
+
+  <div class="bg" aria-hidden="true"></div>
+  <div class="title-layer" aria-hidden="true">
+    <div class="big-title"><span class="bt-1">CEVICHERÍA 635</span></div>
+  </div>
+  <canvas class="webgl" aria-hidden="true"></canvas>
+  <div class="vignette" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="loader" id="loader" role="status" aria-live="polite"><b>Cevichería 635</b><i></i><small>Preparando el plato…</small></div>
+  <a class="btn wa-float" id="wa-float" href="#reservar" aria-label="Reservar por WhatsApp">Reservar</a>
+  <script>
+    (function () {
+      var l = document.getElementById('loader');
+      var hide = function () { l.classList.add('done'); };
+      window.addEventListener('load', function () { setTimeout(hide, 400); });
+      setTimeout(hide, 9000);
+      var lite = matchMedia('(max-width: 760px), (pointer: coarse)').matches;
+      window.__lite = lite;
+      document.documentElement.classList.toggle('lite', lite);
+    })();
+  </script>
+  <div class="milk" aria-hidden="true"></div>
+
+  <header class="nav">
+    <a class="brand" href="#inicio">Cevichería 635</a>
+    <nav class="nav-links" aria-label="Secciones">
+      <a href="#carta">Carta</a>
+      <a href="#reservar">Reservas</a>
+    </nav>
+    <a class="btn btn-nav" href="#reservar">Reservar mesa</a>
+  </header>
+
+  <main>
+    <section id="inicio" class="stage" aria-label="Nuestro ceviche">
+      <div class="stage-ui">
+        <h1 class="sr-only">Restaurant Cevichería 635</h1>
+
+        <div class="panel p-hero">
+          <p class="kicker">Cevichería en Sullana</p>
+          <p class="hint">Baja y arma tu ceviche
+            <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M5 9l7 7 7-7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </p>
+        </div>
+
+        <div class="panel p-six">
+          <h2 class="wide">Seis ingredientes. Ni uno más.</h2>
+          <p>Pescado del día, limón, ají limo, cebolla roja, culantro y sal. El camote, el choclo y la cancha lo acompañan.</p>
+        </div>
+
+        <div class="panel p-explode">
+          <h2 class="wide">Pieza por pieza</h2>
+        </div>
+
+        <div class="labels" aria-hidden="true"></div>
+        <ul class="sr-only">
+          <li>Pescado del día, en cubos, cortado al momento.</li>
+          <li>Cebolla roja en pluma, lavada en agua helada.</li>
+          <li>Ají limo rojo en rodajas finas.</li>
+          <li>Culantro picado al final.</li>
+          <li>Leche de tigre: limón, sal y el jugo del pescado.</li>
+          <li>Camote glaseado con chancaca.</li>
+          <li>Choclo de grano grande.</li>
+          <li>Limón de Chulucanas.</li>
+          <li>Cancha tostada en casa.</li>
+        </ul>
+
+        <div class="panel p-dive">
+          <h2 class="wide">Ahora métete al plato</h2>
+        </div>
+        <div class="panel p-fondo">
+          <p class="wide">Lo mejor está al fondo</p>
+        </div>
+
+        <div class="dishes">
+          <article class="dish-info">
+            <p class="dish-count">1 de 4</p>
+            <h3 class="dish-name">Ceviche clásico</h3>
+            <p class="dish-desc">Lenguado del día, cebolla roja, ají limo, camote glaseado y choclo.</p>
+            <p class="dish-price">S/ 38</p>
+            <button class="ver-btn" type="button" data-dish="ceviche-clasico" aria-haspopup="dialog">Ver cómo se arma</button>
+          </article>
+          <article class="dish-info">
+            <p class="dish-count">2 de 4</p>
+            <h3 class="dish-name">Tiradito al ají amarillo</h3>
+            <p class="dish-desc">Láminas finas de pescado bañadas en crema de ají amarillo.</p>
+            <p class="dish-price">S/ 42</p>
+            <button class="ver-btn" type="button" data-dish="tiradito-al-aji-amarillo" aria-haspopup="dialog">Ver cómo se arma</button>
+          </article>
+          <article class="dish-info">
+            <p class="dish-count">3 de 4</p>
+            <h3 class="dish-name">Leche de tigre</h3>
+            <p class="dish-desc">El jugo del ceviche en vaso, con pescado y chicharrón de calamar.</p>
+            <p class="dish-price">S/ 22</p>
+            <button class="ver-btn" type="button" data-dish="leche-de-tigre" aria-haspopup="dialog">Ver cómo se arma</button>
+          </article>
+          <article class="dish-info">
+            <p class="dish-count">4 de 4</p>
+            <h3 class="dish-name">Chicharrón de pescado</h3>
+            <p class="dish-desc">Frito al momento, con salsa criolla y limón.</p>
+            <p class="dish-price">S/ 36</p>
+            <button class="ver-btn" type="button" data-dish="chicharron-de-pescado" aria-haspopup="dialog">Ver cómo se arma</button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="carta" class="carta" aria-labelledby="carta-title">
+      <div class="inner">
+        <h2 id="carta-title" class="wide">La carta</h2>
+        <div class="tabs" role="tablist" aria-label="Categorías de la carta">
+          <button role="tab" id="tab-ceviches" aria-controls="panel-ceviches" aria-selected="true">Ceviches</button>
+          <button role="tab" id="tab-tiraditos" aria-controls="panel-tiraditos" aria-selected="false" tabindex="-1">Tiraditos</button>
+          <button role="tab" id="tab-calientes" aria-controls="panel-calientes" aria-selected="false" tabindex="-1">Calientes</button>
+          <button role="tab" id="tab-bebidas" aria-controls="panel-bebidas" aria-selected="false" tabindex="-1">Bebidas</button>
+          <button role="tab" id="tab-todo" aria-controls="panel-todo" aria-selected="false" tabindex="-1" class="tab-todo">Carta completa</button>
+        </div>
+        <ul class="menu" role="tabpanel" id="panel-ceviches" aria-labelledby="tab-ceviches">
+          <li><button class="card" type="button" data-dish="ceviche-clasico" aria-haspopup="dialog"><span class="card-top"><span class="card-name">Ceviche clásico</span><span class="card-desc">Pescado del día, cebolla roja, ají limo, camote y choclo.</span></span><span class="card-price">S/ 38</span><span class="card-cta">Ver cómo se arma</span></button></li>
+          <li><button class="card" type="button" data-dish="ceviche-mixto" aria-haspopup="dialog"><span class="card-top"><span class="card-name">Ceviche mixto</span><span class="card-desc">Pescado, pulpo, langostinos y conchas.</span></span><span class="card-price">S/ 44</span><span class="card-cta">Ver cómo se arma</span></button></li>
+          <li><button class="card" type="button" data-dish="ceviche-a-lo-macho" aria-haspopup="dialog"><span class="card-top"><span class="card-name">Ceviche a lo macho</span><span class="card-desc">Bañado en crema de mariscos y rocoto.</span></span><span class="card-price">S/ 46</span><span class="card-cta">Ver cómo se arma</span></button></li>
+          <li><button class="card" type="button" data-dish="ceviche-de-conchas-negras" aria-haspopup="dialog"><span class="card-top"><span class="card-name">Ceviche de conchas negras</span><span class="card-desc">Solo cuando llegan frescas. Pregunta al mozo.</span></span><span class="card-price">S/ 52</span><span class="card-cta">Ver cómo se arma</span></button></li>
+          <li><button class="card" type="button" data-dish="leche-de-tigre" aria-haspopup="dialog"><span class="card-top"><span class="card-name">Leche de tigre</span><span class="card-desc">En vaso, con chicharrón de calamar.</span></span><span class="card-price">S/ 22</span><span class="card-cta">Ver cómo se arma</span></button></li>
+        </ul>
+        <ul class="menu" role="tabpanel" id="panel-tiraditos" aria-labelledby="tab-tiraditos" hidden>
+          <li><button class="card" type="button" data-dish="tiradito-al-aji-amarillo" aria-haspopup="dialog"><span class="card-top"><span class="card-name">Tiradito al ají amarillo</span><span class="card-desc">Láminas de pescado en crema de ají amarillo.</span></span><span class="card-price">S/ 42</span><span class="card-cta">Ver cómo se arma</span></button></li>
+          <li><button class="card" type="button" data-dish="tiradito-al-rocoto" aria-haspopup="dialog"><span class="card-top"><span class="card-name">Tiradito al rocoto</span><span class="card-desc">Más picante, con crema de rocoto y choclo.</span></span><span class="card-price">S/ 42</span><span class="card-cta">Ver cómo se arma</span></button></li>
+          <li><button class="card" type="button" data-dish="tiradito-nikkei" aria-haspopup="dialog"><span class="card-top"><span class="card-name">Tiradito nikkei</span><span class="card-desc">Soya, limón, ajonjolí y cebollita china.</span></span><span class="card-price">S/ 45</span><span class="card-cta">Ver cómo se arma</span></button></li>
+        </ul>
+        <ul class="menu" role="tabpanel" id="panel-calientes" aria-labelledby="tab-calientes" hidden>
+          <li><button class="card" type="button" data-dish="arroz-con-mariscos" aria-haspopup="dialog"><span class="card-top"><span class="card-name">Arroz con mariscos</span><span class="card-desc">Choros, langostinos, pimiento y arvejas.</span></span><span class="card-price">S/ 45</span><span class="card-cta">Ver cómo se arma</span></button></li>
+          <li><button class="card" type="button" data-dish="chicharron-de-pescado" aria-haspopup="dialog"><span class="card-top"><span class="card-name">Chicharrón de pescado</span><span class="card-desc">Con salsa criolla y tártara de la casa.</span></span><span class="card-price">S/ 36</span><span class="card-cta">Ver cómo se arma</span></button></li>
+          <li><button class="card" type="button" data-dish="jalea-mixta" aria-haspopup="dialog"><span class="card-top"><span class="card-name">Jalea mixta</span><span class="card-desc">Para compartir entre dos o tres personas.</span></span><span class="card-price">S/ 58</span><span class="card-cta">Ver cómo se arma</span></button></li>
+          <li><button class="card" type="button" data-dish="sudado-de-pescado" aria-haspopup="dialog"><span class="card-top"><span class="card-name">Sudado de pescado</span><span class="card-desc">Al vapor con tomate, cebolla y chicha de jora.</span></span><span class="card-price">S/ 40</span><span class="card-cta">Ver cómo se arma</span></button></li>
+        </ul>
+        <ul class="menu" role="tabpanel" id="panel-bebidas" aria-labelledby="tab-bebidas" hidden>
+          <li><button class="card" type="button" data-dish="chicha-morada" aria-haspopup="dialog"><span class="card-top"><span class="card-name">Chicha morada</span><span class="card-desc">Jarra de un litro, preparada en casa.</span></span><span class="card-price">S/ 18</span><span class="card-cta">Ver cómo se arma</span></button></li>
+          <li><button class="card" type="button" data-dish="limonada-frozen" aria-haspopup="dialog"><span class="card-top"><span class="card-name">Limonada frozen</span><span class="card-desc">Con hierbabuena.</span></span><span class="card-price">S/ 12</span><span class="card-cta">Ver cómo se arma</span></button></li>
+          <li><button class="card" type="button" data-dish="maracuya-sour" aria-haspopup="dialog"><span class="card-top"><span class="card-name">Maracuyá sour</span><span class="card-desc">Pisco, maracuyá y clara de huevo.</span></span><span class="card-price">S/ 22</span><span class="card-cta">Ver cómo se arma</span></button></li>
+          <li><button class="card" type="button" data-dish="cerveza" aria-haspopup="dialog"><span class="card-top"><span class="card-name">Cerveza</span><span class="card-desc">Botella de 620 ml, bien helada.</span></span><span class="card-price">S/ 14</span><span class="card-cta">Ver cómo se arma</span></button></li>
+        </ul>
+        <div class="fullmenu" role="tabpanel" id="panel-todo" aria-labelledby="tab-todo" hidden></div>
+      </div>
+    </section>
+
+    <section id="reservar" class="reservar" aria-labelledby="reservar-title">
+      <div class="inner reservar-grid">
+        <div class="reservar-copy">
+          <h2 id="reservar-title" class="wide">¿Se te antojó?</h2>
+          <p>Los fines de semana se llena antes del mediodía. Separa tu mesa y te la guardamos 15 minutos.</p>
+          <dl class="datos">
+            <div><dt>Horario</dt><dd>Consulta horarios por WhatsApp</dd></div>
+            <div><dt>Dirección</dt><dd>Sullana, Piura</dd></div>
+          </dl>
+          <button class="btn btn-wa" type="button" id="wa-btn">Pedir por WhatsApp</button>
+          <p class="wa-note" id="wa-note" role="status"></p>
+        </div>
+        <form class="form" id="reserva-form" novalidate>
+          <div class="field">
+            <label for="f-nombre">Nombre</label>
+            <input id="f-nombre" name="nombre" autocomplete="name" required>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="f-fecha">Fecha</label>
+              <input id="f-fecha" name="fecha" type="date" required>
+            </div>
+            <div class="field">
+              <label for="f-hora">Hora</label>
+              <select id="f-hora" name="hora">
+                <option>12:00</option><option>12:30</option><option selected>13:00</option><option>13:30</option>
+                <option>14:00</option><option>14:30</option><option>15:00</option><option>15:30</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <span class="label" id="personas-label">Personas</span>
+            <div class="stepper" role="group" aria-labelledby="personas-label">
+              <button type="button" data-step="-1" aria-label="Una persona menos">−</button>
+              <output id="f-personas" aria-live="polite">2</output>
+              <button type="button" data-step="1" aria-label="Una persona más">+</button>
+            </div>
+          </div>
+          <button class="btn btn-reservar" type="submit">Reservar mesa</button>
+          <p class="form-error" id="form-error" role="alert"></p>
+          <div class="form-ok" id="form-ok" role="status" hidden></div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <div class="ficha" role="dialog" aria-modal="true" aria-labelledby="ficha-name" hidden>
+    <canvas class="ficha-gl" aria-hidden="true"></canvas>
+    <div class="bar bar-top" aria-hidden="true"></div>
+    <div class="bar bar-bottom" aria-hidden="true"></div>
+    <div class="ficha-info">
+      <p class="ficha-cat" id="ficha-cat"></p>
+      <h2 class="ficha-name" id="ficha-name"></h2>
+      <p class="ficha-desc" id="ficha-desc"></p>
+      <ol class="ficha-steps" id="ficha-steps" aria-label="Ingredientes"></ol>
+      <div class="ficha-foot">
+        <p class="ficha-price" id="ficha-price"></p>
+        <button type="button" class="btn btn-ghost" id="ficha-replay">Armar otra vez</button>
+        <button type="button" class="btn btn-nav" id="ficha-reservar">Reservar mesa</button>
+      </div>
+    </div>
+    <button type="button" class="ficha-close" id="ficha-close" aria-label="Cerrar ficha del plato">
+      <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+
+  <footer class="footer">
+    <p class="brand">Cevichería 635</p>
+    <p>Sullana, Piura. Consulta horarios por WhatsApp.</p>
+    <p class="demo">Sitio de muestra: la carta y los precios son de ejemplo, no oficiales de Cevichería 635.</p>
+  </footer>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script type="module">
+import * as THREE from 'three';
+import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.js';
+
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const lerp = (a, b, t) => a + (b - a) * t;
+const clamp01 = (v) => Math.min(1, Math.max(0, v));
+const ease = (t) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
+function rng(seed) {
+  let a = seed >>> 0;
+  return () => {
+    a |= 0; a = (a + 0x6d2b79f5) | 0;
+    let t = Math.imul(a ^ (a >>> 15), 1 | a);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+
+/* =========================================================
+   Renderer y escena
+   ========================================================= */
+const canvas = document.querySelector('.webgl');
+const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true, powerPreference: 'high-performance' });
+const LITE = !!window.__lite;
+renderer.setPixelRatio(Math.min(devicePixelRatio, LITE ? 1.5 : 2));
+renderer.setSize(innerWidth, innerHeight);
+renderer.outputColorSpace = THREE.SRGBColorSpace;
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 0.92;
+renderer.setClearColor(0x000000, 0);
+
+const scene = new THREE.Scene();
+const pmrem = new THREE.PMREMGenerator(renderer);
+scene.environment = pmrem.fromScene(new RoomEnvironment(renderer), 0.04).texture;
+
+const camera = new THREE.PerspectiveCamera(32, innerWidth / innerHeight, 0.05, 100);
+
+// Foco de cine: deja el plato en penumbra y lo revela al armarse
+const key = new THREE.SpotLight(0xffe6c4, 0.4, 0, 0.36, 0.85, 0);
+key.position.set(2.2, 11, 4.5);
+key.target.position.set(0, 0.6, 0);
+scene.add(key, key.target);
+const soft = new THREE.DirectionalLight(0xffd9c0, 0.35);
+soft.position.set(3, 6, 6);
+scene.add(soft);
+const rim = new THREE.DirectionalLight(0xc8667b, 3.2);
+rim.position.set(-6, 3, -5);
+scene.add(rim);
+const fill = new THREE.DirectionalLight(0x8fb4ff, 0.6);
+fill.position.set(5, 1, -2);
+scene.add(fill);
+
+/* =========================================================
+   Materiales
+   ========================================================= */
+const M = {
+  ceramica: new THREE.MeshPhysicalMaterial({ color: 0xd8d1c4, roughness: 0.3, clearcoat: 1, clearcoatRoughness: 0.08 }),
+  esmalte: new THREE.MeshPhysicalMaterial({ color: 0x14208f, roughness: 0.18, clearcoat: 1, clearcoatRoughness: 0.05 }),
+  leche: new THREE.MeshPhysicalMaterial({ color: 0xd6cfa9, roughness: 0.08, clearcoat: 1, transparent: true, opacity: 0.93 }),
+  pescado: new THREE.MeshPhysicalMaterial({ color: 0xfaf5ec, roughness: 0.32, clearcoat: 0.7, clearcoatRoughness: 0.25, sheen: 0.6, sheenColor: new THREE.Color(0xffd2c2) }),
+  cebolla: new THREE.MeshPhysicalMaterial({ color: 0x8a1f73, roughness: 0.2, clearcoat: 1, clearcoatRoughness: 0.1 }),
+  cebollaIn: new THREE.MeshPhysicalMaterial({ color: 0xf6dcef, roughness: 0.25, clearcoat: 1, transparent: true, opacity: 0.92 }),
+  aji: new THREE.MeshPhysicalMaterial({ color: 0xe0122e, roughness: 0.18, clearcoat: 1 }),
+  ajiIn: new THREE.MeshPhysicalMaterial({ color: 0xff9a8a, roughness: 0.3, clearcoat: 0.6 }),
+  semilla: new THREE.MeshStandardMaterial({ color: 0xfff1c4, roughness: 0.5 }),
+  culantro: new THREE.MeshPhysicalMaterial({ color: 0x2c9b37, roughness: 0.35, clearcoat: 0.5, side: THREE.DoubleSide }),
+  tallo: new THREE.MeshStandardMaterial({ color: 0x5fae3a, roughness: 0.5 }),
+  camote: new THREE.MeshPhysicalMaterial({ color: 0xf27407, roughness: 0.2, clearcoat: 1, clearcoatRoughness: 0.06 }),
+  choclo: new THREE.MeshPhysicalMaterial({ color: 0xf4e3a2, roughness: 0.3, clearcoat: 0.8 }),
+  marlo: new THREE.MeshStandardMaterial({ color: 0xe6c97a, roughness: 0.7 }),
+  cascara: new THREE.MeshPhysicalMaterial({ color: 0x3f8f19, roughness: 0.35, clearcoat: 0.6 }),
+  cancha: new THREE.MeshPhysicalMaterial({ color: 0xc9842c, roughness: 0.45, clearcoat: 0.4 }),
+  salsaAji: new THREE.MeshPhysicalMaterial({ color: 0xffae12, roughness: 0.15, clearcoat: 1 }),
+  frito: new THREE.MeshStandardMaterial({ color: 0xd88124, roughness: 0.62, metalness: 0 }),
+  vidrio: new THREE.MeshPhysicalMaterial({ color: 0xffffff, roughness: 0.04, transparent: true, opacity: 0.22, clearcoat: 1, side: THREE.DoubleSide, depthWrite: false })
+};
+
+function limeTexture() {
+  const c = document.createElement('canvas');
+  c.width = c.height = 512;
+  const g = c.getContext('2d');
+  g.fillStyle = '#3f8f19'; g.beginPath(); g.arc(256, 256, 256, 0, Math.PI * 2); g.fill();
+  g.fillStyle = '#eef6cf'; g.beginPath(); g.arc(256, 256, 232, 0, Math.PI * 2); g.fill();
+  for (let i = 0; i < 9; i++) {
+    const a0 = (i / 9) * Math.PI * 2 + 0.05;
+    const a1 = ((i + 1) / 9) * Math.PI * 2 - 0.05;
+    const grd = g.createRadialGradient(256, 256, 20, 256, 256, 215);
+    grd.addColorStop(0, '#d9f08c'); grd.addColorStop(1, '#9fd23a');
+    g.fillStyle = grd;
+    g.beginPath(); g.moveTo(256 + Math.cos((a0 + a1) / 2) * 22, 256 + Math.sin((a0 + a1) / 2) * 22);
+    g.arc(256, 256, 214, a0, a1); g.closePath(); g.fill();
+  }
+  g.fillStyle = '#eef6cf'; g.beginPath(); g.arc(256, 256, 18, 0, Math.PI * 2); g.fill();
+  const t = new THREE.CanvasTexture(c);
+  t.colorSpace = THREE.SRGBColorSpace;
+  return t;
+}
+M.limaCorte = new THREE.MeshPhysicalMaterial({ map: limeTexture(), roughness: 0.15, clearcoat: 1 });
+// Menos reflejo del ambiente: más contraste entre luz y sombra
+Object.values(M).forEach((m) => { m.envMapIntensity = 0.42; });
+
+function shadowTexture() {
+  const c = document.createElement('canvas');
+  c.width = c.height = 256;
+  const g = c.getContext('2d');
+  const grd = g.createRadialGradient(128, 128, 0, 128, 128, 128);
+  grd.addColorStop(0, 'rgba(0,0,0,.8)'); grd.addColorStop(0.55, 'rgba(0,0,0,.35)'); grd.addColorStop(1, 'rgba(0,0,0,0)');
+  g.fillStyle = grd; g.fillRect(0, 0, 256, 256);
+  return new THREE.CanvasTexture(c);
+}
+const shadowTex = shadowTexture();
+function contactShadow(r) {
+  const m = new THREE.Mesh(new THREE.PlaneGeometry(r * 2, r * 2), new THREE.MeshBasicMaterial({ map: shadowTex, transparent: true, depthWrite: false }));
+  m.rotation.x = -Math.PI / 2;
+  m.position.y = -0.01;
+  return m;
+}
+
+/* =========================================================
+   Piezas
+   ========================================================= */
+const G = {
+  cubo: (s) => new RoundedBoxGeometry(s, s * 0.82, s * 0.92, 3, s * 0.18),
+  esfera: new THREE.SphereGeometry(1, 32, 20),
+  leaf: (() => {
+    const s = new THREE.Shape();
+    s.moveTo(0, 0);
+    s.bezierCurveTo(-0.13, 0.04, -0.16, 0.17, -0.07, 0.21);
+    s.bezierCurveTo(-0.06, 0.27, 0.0, 0.29, 0.02, 0.25);
+    s.bezierCurveTo(0.06, 0.29, 0.13, 0.25, 0.1, 0.18);
+    s.bezierCurveTo(0.17, 0.13, 0.12, 0.03, 0, 0);
+    return new THREE.ShapeGeometry(s, 10);
+  })()
+};
+
+function pescado(s) {
+  const m = new THREE.Mesh(G.cubo(s), M.pescado.clone());
+  m.material.color.lerp(new THREE.Color(0xf7e1d6), Math.random() * 0.5);
+  return m;
+}
+function cebolla(rand, scale = 1) {
+  const g = new THREE.Group();
+  const r = (0.26 + rand() * 0.12) * scale;
+  const arc = 1.5 + rand() * 1.3;
+  const out = new THREE.Mesh(new THREE.TorusGeometry(r, 0.04 * scale, 10, 30, arc), M.cebolla);
+  const inn = new THREE.Mesh(new THREE.TorusGeometry(r - 0.03 * scale, 0.028 * scale, 8, 30, arc), M.cebollaIn);
+  out.scale.z = inn.scale.z = 0.45;
+  g.add(out, inn);
+  return g;
+}
+function aji(rand, scale = 1) {
+  const g = new THREE.Group();
+  const o = new THREE.Mesh(new THREE.CylinderGeometry(0.08 * scale, 0.08 * scale, 0.03 * scale, 22), M.aji);
+  const i = new THREE.Mesh(new THREE.CylinderGeometry(0.055 * scale, 0.055 * scale, 0.034 * scale, 18), M.ajiIn);
+  g.add(o, i);
+  for (let k = 0; k < 3; k++) {
+    const sd = new THREE.Mesh(G.esfera, M.semilla);
+    sd.scale.set(0.012 * scale, 0.006 * scale, 0.009 * scale);
+    const a = (k / 3) * Math.PI * 2 + rand();
+    sd.position.set(Math.cos(a) * 0.025 * scale, 0.018 * scale, Math.sin(a) * 0.025 * scale);
+    g.add(sd);
+  }
+  return g;
+}
+function culantro(rand, scale = 1) {
+  const g = new THREE.Group();
+  const n = 3;
+  for (let k = 0; k < n; k++) {
+    const l = new THREE.Mesh(G.leaf, M.culantro);
+    l.scale.setScalar((0.8 + rand() * 0.4) * scale);
+    l.rotation.set(-Math.PI / 2 + 0.25, 0, (k - 1) * 0.9 + rand() * 0.3);
+    g.add(l);
+  }
+  const st = new THREE.Mesh(new THREE.CylinderGeometry(0.008 * scale, 0.008 * scale, 0.22 * scale, 6), M.tallo);
+  st.rotation.x = Math.PI / 2; st.position.z = 0.1 * scale;
+  g.add(st);
+  return g;
+}
+function camote() {
+  const m = new THREE.Mesh(G.esfera, M.camote);
+  m.scale.set(0.58, 0.2, 0.42);
+  return m;
+}
+function choclo() {
+  const g = new THREE.Group();
+  const core = new THREE.Mesh(new THREE.CylinderGeometry(0.15, 0.15, 0.62, 20), M.marlo);
+  core.rotation.z = Math.PI / 2;
+  g.add(core);
+  const around = 9, along = 7;
+  const kernels = new THREE.InstancedMesh(new THREE.SphereGeometry(1, 14, 10), M.choclo, around * along);
+  const d = new THREE.Object3D();
+  let n = 0;
+  for (let i = 0; i < along; i++) {
+    for (let j = 0; j < around; j++) {
+      const a = (j / around) * Math.PI * 2 + (i % 2) * 0.35;
+      d.position.set(-0.27 + i * 0.09, Math.cos(a) * 0.17, Math.sin(a) * 0.17);
+      d.rotation.set(a, 0, 0);
+      d.scale.set(0.048, 0.04, 0.052);
+      d.updateMatrix();
+      kernels.setMatrixAt(n++, d.matrix);
+    }
+  }
+  g.add(kernels);
+  return g;
+}
+function limon(r = 0.32) {
+  const g = new THREE.Group();
+  const dome = new THREE.Mesh(new THREE.SphereGeometry(r, 32, 16, 0, Math.PI * 2, 0, Math.PI / 2), M.cascara);
+  dome.rotation.x = Math.PI;
+  const face = new THREE.Mesh(new THREE.CircleGeometry(r, 40), M.limaCorte);
+  face.rotation.x = -Math.PI / 2;
+  face.position.y = 0.001;
+  g.add(dome, face);
+  return g;
+}
+function cancha(rand) {
+  const m = new THREE.Mesh(G.esfera, M.cancha);
+  m.scale.set(0.085, 0.065, 0.11);
+  m.rotation.set(rand() * 3, rand() * 3, rand() * 3);
+  return m;
+}
+function plato(r = 1.75) {
+  const g = new THREE.Group();
+  const base = new THREE.Mesh(new THREE.CylinderGeometry(r, r * 0.86, 0.12, 64), M.ceramica);
+  base.position.y = 0.06;
+  const rimT = new THREE.Mesh(new THREE.TorusGeometry(r - 0.04, 0.05, 12, 80), M.esmalte);
+  rimT.rotation.x = Math.PI / 2; rimT.position.y = 0.12;
+  g.add(base, rimT, contactShadow(r * 1.35));
+  return g;
+}
+
+/* =========================================================
+   El ceviche principal (se arma y se desarma)
+   ========================================================= */
+const ceviche = new THREE.Group();
+scene.add(ceviche);
+
+const layers = {};
+function layer(name) {
+  const g = new THREE.Group();
+  g.name = name;
+  ceviche.add(g);
+  layers[name] = g;
+  return g;
+}
+const pieces = [];
+function addPiece(group, obj, home, rot, rand) {
+  obj.position.copy(home);
+  obj.rotation.copy(rot);
+  obj.userData.home = home.clone();
+  obj.userData.homeQ = new THREE.Quaternion().setFromEuler(rot);
+  obj.userData.randQ = new THREE.Quaternion().setFromEuler(new THREE.Euler(rand() * 6, rand() * 6, rand() * 6));
+  obj.userData.delay = rand();
+  obj.userData.spin = (rand() - 0.5) * 2;
+  group.add(obj);
+  pieces.push(obj);
+  return obj;
+}
+
+(function buildCeviche() {
+  const rand = rng(11);
+  // Bowl de cerámica
+  const bowl = layer('bowl');
+  const outer = new THREE.LatheGeometry([
+    new THREE.Vector2(0.001, 0), new THREE.Vector2(0.75, 0), new THREE.Vector2(0.82, 0.08),
+    new THREE.Vector2(1.4, 0.3), new THREE.Vector2(1.72, 0.74), new THREE.Vector2(1.82, 0.93)
+  ], 80);
+  const inner = new THREE.LatheGeometry([
+    new THREE.Vector2(1.74, 0.93), new THREE.Vector2(1.62, 0.76), new THREE.Vector2(1.3, 0.37),
+    new THREE.Vector2(0.7, 0.2), new THREE.Vector2(0.001, 0.18)
+  ], 80);
+  const bOut = new THREE.Mesh(outer, M.esmalte);
+  const bIn = new THREE.Mesh(inner, M.ceramica.clone());
+  bIn.material.side = THREE.DoubleSide;
+  const lip = new THREE.Mesh(new THREE.TorusGeometry(1.78, 0.045, 12, 100), M.ceramica);
+  lip.rotation.x = Math.PI / 2; lip.position.y = 0.93;
+  bowl.add(bOut, bIn, lip, contactShadow(2.6));
+
+  // Leche de tigre
+  const leche = layer('leche');
+  const disc = new THREE.Mesh(new THREE.CircleGeometry(1.45, 64), M.leche);
+  disc.rotation.x = -Math.PI / 2; disc.position.y = 0.56;
+  leche.add(disc);
+
+  // Pescado en montículo
+  const pes = layer('pescado');
+  const pts = [];
+  while (pts.length < 26) {
+    const a = rand() * Math.PI * 2, d = Math.sqrt(rand()) * 0.95;
+    const x = Math.cos(a) * d, z = Math.sin(a) * d;
+    if (pts.every((p) => Math.hypot(p.x - x, p.z - z) > 0.24)) pts.push({ x, z, d });
+  }
+  pts.forEach((p) => {
+    const s = 0.27 + rand() * 0.07;
+    addPiece(pes, pescado(s), new THREE.Vector3(p.x, 0.66 + (1 - p.d / 0.95) * 0.3 + rand() * 0.06, p.z),
+      new THREE.Euler((rand() - 0.5) * 0.8, rand() * 3, (rand() - 0.5) * 0.8), rand);
+  });
+
+  const top = (x, z) => 0.92 + (1 - Math.min(1, Math.hypot(x, z) / 0.95)) * 0.3;
+  const ceb = layer('cebolla');
+  for (let i = 0; i < 13; i++) {
+    const a = rand() * Math.PI * 2, d = 0.15 + rand() * 0.8;
+    const x = Math.cos(a) * d, z = Math.sin(a) * d;
+    addPiece(ceb, cebolla(rand), new THREE.Vector3(x, top(x, z) + 0.02, z), new THREE.Euler(-Math.PI / 2 + (rand() - 0.5) * 0.6, (rand() - 0.5) * 0.4, rand() * 6.28), rand);
+  }
+  const aj = layer('aji');
+  for (let i = 0; i < 11; i++) {
+    const a = rand() * Math.PI * 2, d = rand() * 0.9;
+    const x = Math.cos(a) * d, z = Math.sin(a) * d;
+    addPiece(aj, aji(rand), new THREE.Vector3(x, top(x, z) + 0.07, z), new THREE.Euler((rand() - 0.5) * 0.7, 0, (rand() - 0.5) * 0.7), rand);
+  }
+  const cu = layer('culantro');
+  for (let i = 0; i < 12; i++) {
+    const a = rand() * Math.PI * 2, d = rand() * 0.95;
+    const x = Math.cos(a) * d, z = Math.sin(a) * d;
+    addPiece(cu, culantro(rand), new THREE.Vector3(x, top(x, z) + 0.1, z), new THREE.Euler((rand() - 0.5) * 0.4, rand() * 6.28, (rand() - 0.5) * 0.4), rand);
+  }
+  addPiece(layer('camote'), camote(), new THREE.Vector3(-1.02, 0.74, 0.55), new THREE.Euler(0.25, 0.6, -0.35), rand);
+  addPiece(layer('choclo'), choclo(), new THREE.Vector3(1.08, 0.78, 0.42), new THREE.Euler(0.15, -0.5, 0.4), rand);
+  addPiece(layer('limon'), limon(), new THREE.Vector3(0.25, 0.86, -1.12), new THREE.Euler(-0.75, 0.3, 0), rand);
+  const can = layer('cancha');
+  for (let i = 0; i < 9; i++) {
+    const a = rand() * Math.PI * 2, d = rand() * 0.22;
+    addPiece(can, cancha(rand), new THREE.Vector3(-0.35 + Math.cos(a) * d, 0.78 + rand() * 0.06, 1.12 + Math.sin(a) * d), new THREE.Euler(rand() * 3, rand() * 3, rand() * 3), rand);
+  }
+})();
+
+// Posición dispersa de cada pieza (el plato "por armar")
+function placeScatter() {
+  const rand = rng(77);
+  const portrait = innerWidth < innerHeight;
+  pieces.forEach((p, i) => {
+    const a = i * 2.39996 + rand() * 0.5;
+    const R = 2.5 + rand() * 1.4;
+    p.userData.scatter = new THREE.Vector3(
+      Math.cos(a) * R * (portrait ? 0.75 : 1.7),
+      0.9 + Math.sin(a) * R * (portrait ? 1.05 : 0.75),
+      -0.6 + rand() * 2.4
+    );
+  });
+}
+placeScatter();
+
+// Despiece: posición de cada capa y ancla de su etiqueta
+const EXPLODE = {
+  bowl: [0, -1.9, 0], leche: [0, -0.95, 0], pescado: [0, 0.25, 0], cebolla: [0, 1.15, 0],
+  aji: [0, 1.7, 0], culantro: [0, 2.25, 0], camote: [-2.3, 0.35, 0.6], choclo: [2.4, 0.2, 0.5],
+  limon: [-1.7, 1.5, -1.1], cancha: [1.6, 1.55, 0.9]
+};
+const LABELS = [
+  ['pescado', 'Pescado del día', 'En cubos, cortado al momento', [1.0, 0.85, 0]],
+  ['cebolla', 'Cebolla roja', 'En pluma, lavada en agua helada', [1.0, 1.0, 0]],
+  ['aji', 'Ají limo', 'En rodajas finas', [0.95, 1.05, 0]],
+  ['culantro', 'Culantro', 'Picado al final', [0.95, 1.1, 0]],
+  ['leche', 'Leche de tigre', 'Limón, sal y el jugo del pescado', [1.5, 0.56, 0]],
+  ['bowl', 'Cuenco helado', 'Se sirve frío, nunca tibio', [1.85, 0.5, 0]],
+  ['camote', 'Camote', 'Glaseado con chancaca', [-1.02, 0.95, 0.55]],
+  ['choclo', 'Choclo', 'De grano grande', [1.08, 1.05, 0.42]],
+  ['limon', 'Limón', 'Exprimido a mano', [0.25, 1.15, -1.12]],
+  ['cancha', 'Cancha', 'Tostada en casa', [-0.35, 0.95, 1.12]]
+];
+const labelBox = document.querySelector('.labels');
+const labelEls = LABELS.map(([layerName, name, desc, anchor]) => {
+  const el = document.createElement('div');
+  el.className = 'lbl';
+  el.innerHTML = `<span class="dot"></span><span class="line"></span><span class="txt"><b>${name}</b><small>${desc}</small></span>`;
+  labelBox.appendChild(el);
+  return { el, layer: layers[layerName], anchor: new THREE.Vector3(...anchor) };
+});
+
+/* =========================================================
+   Carrusel de platos
+   ========================================================= */
+const carousel = new THREE.Group();
+carousel.visible = false;
+scene.add(carousel);
+const DISHES = [];
+
+function dishCeviche() {
+  const rand = rng(5);
+  const g = new THREE.Group();
+  const bowl = layers.bowl.clone(true);
+  const lec = layers.leche.clone(true);
+  g.add(bowl, lec);
+  ['pescado', 'cebolla', 'aji', 'culantro', 'camote', 'choclo', 'limon', 'cancha'].forEach((n) => {
+    layers[n].children.forEach((p) => {
+      const c = p.clone(true);
+      c.position.copy(p.userData.home);
+      c.quaternion.copy(p.userData.homeQ);
+      g.add(c);
+    });
+  });
+  rand();
+  return g;
+}
+function dishTiradito() {
+  const rand = rng(9);
+  const g = plato(1.8);
+  const salsa = new THREE.Mesh(new THREE.CylinderGeometry(1.35, 1.35, 0.03, 60), M.salsaAji);
+  salsa.position.y = 0.135;
+  g.add(salsa);
+  for (let i = 0; i < 7; i++) {
+    const s = new THREE.Mesh(new RoundedBoxGeometry(1.7 - Math.abs(i - 3) * 0.14, 0.06, 0.3, 2, 0.028), M.pescado);
+    s.position.set(0, 0.19 + i * 0.004, -0.9 + i * 0.3);
+    s.rotation.y = -0.5;
+    g.add(s);
+  }
+  for (let i = 0; i < 10; i++) {
+    const a = aji(rand, 1.1);
+    a.position.set((rand() - 0.5) * 2, 0.24, (rand() - 0.5) * 1.9);
+    g.add(a);
+  }
+  for (let i = 0; i < 6; i++) {
+    const c = culantro(rand, 1.1);
+    c.position.set((rand() - 0.5) * 1.9, 0.25, (rand() - 0.5) * 1.8);
+    c.rotation.y = rand() * 6;
+    g.add(c);
+  }
+  return g;
+}
+function dishLeche() {
+  const rand = rng(21);
+  const g = new THREE.Group();
+  const glass = new THREE.Mesh(new THREE.CylinderGeometry(0.85, 0.68, 2.0, 48, 1, true), M.vidrio);
+  glass.position.y = 1.0;
+  const base = new THREE.Mesh(new THREE.CylinderGeometry(0.68, 0.68, 0.12, 48), M.vidrio);
+  base.position.y = 0.06;
+  const liquid = new THREE.Mesh(new THREE.CylinderGeometry(0.8, 0.66, 1.55, 48), M.leche);
+  liquid.position.y = 0.88;
+  g.add(liquid, glass, base, contactShadow(1.4));
+  for (let i = 0; i < 9; i++) {
+    const p = pescado(0.22);
+    const a = rand() * 6.28, d = rand() * 0.5;
+    p.position.set(Math.cos(a) * d, 1.7 + rand() * 0.15, Math.sin(a) * d);
+    p.rotation.set(rand(), rand() * 3, rand());
+    g.add(p);
+  }
+  for (let i = 0; i < 4; i++) {
+    const r = new THREE.Mesh(new THREE.TorusGeometry(0.16, 0.06, 12, 28), M.frito);
+    const a = rand() * 6.28, d = 0.2 + rand() * 0.35;
+    r.position.set(Math.cos(a) * d, 1.95 + rand() * 0.1, Math.sin(a) * d);
+    r.rotation.set(-Math.PI / 2 + (rand() - 0.5), 0, 0);
+    g.add(r);
+  }
+  for (let i = 0; i < 4; i++) {
+    const c = culantro(rand);
+    c.position.set((rand() - 0.5) * 0.9, 2.05, (rand() - 0.5) * 0.9);
+    g.add(c);
+  }
+  const lm = limon(0.3);
+  lm.position.set(0.75, 1.95, 0.2);
+  lm.rotation.set(0.2, 0, Math.PI / 2.4);
+  g.add(lm);
+  return g;
+}
+function dishChicharron() {
+  const rand = rng(33);
+  const g = plato(1.8);
+  for (let i = 0; i < 9; i++) {
+    const geo = new THREE.IcosahedronGeometry(0.3 + rand() * 0.08, 2);
+    const pos = geo.attributes.position;
+    for (let k = 0; k < pos.count; k++) {
+      const v = new THREE.Vector3().fromBufferAttribute(pos, k);
+      v.multiplyScalar(1 + (Math.sin(v.x * 18) * Math.cos(v.z * 16) + Math.sin(v.y * 22)) * 0.06);
+      pos.setXYZ(k, v.x * 1.25, v.y * 0.75, v.z);
+    }
+    geo.computeVertexNormals();
+    const m = new THREE.Mesh(geo, M.frito);
+    const a = (i / 9) * Math.PI * 2 + rand() * 0.3, d = i === 0 ? 0 : 0.55 + rand() * 0.35;
+    m.position.set(Math.cos(a) * d - 0.2, 0.34 + rand() * 0.12, Math.sin(a) * d);
+    m.rotation.set(rand(), rand() * 6, rand() * 0.4);
+    g.add(m);
+  }
+  for (let i = 0; i < 8; i++) {
+    const c = cebolla(rand, 0.7);
+    c.position.set(1.1 + (rand() - 0.5) * 0.5, 0.26, -0.5 + (rand() - 0.5) * 0.5);
+    c.rotation.set(-Math.PI / 2, 0, rand() * 6);
+    g.add(c);
+  }
+  const lm = limon(0.3);
+  lm.position.set(1.15, 0.3, 0.55);
+  lm.rotation.set(-0.6, 0, 0.3);
+  g.add(lm);
+  return g;
+}
+[dishCeviche, dishTiradito, dishLeche, dishChicharron].forEach((fn, i, arr) => {
+  const holder = new THREE.Group();
+  const d = fn();
+  d.position.y = i === 2 ? -0.7 : 0;
+  holder.add(d);
+  const a = (i / arr.length) * Math.PI * 2;
+  holder.position.set(Math.sin(a) * 3.4, 0, Math.cos(a) * 3.4);
+  holder.userData.inner = d;
+  carousel.add(holder);
+  DISHES.push(holder);
+});
+const DISH_COLORS = [
+  { base: '#4F6F94', glow: '#9DB4CF', ink: '#F2ECDF', rim: 0xd8a04e },
+  { base: '#D8A04E', glow: '#EBCB8A', ink: '#16121C', rim: 0xc8667b },
+  { base: '#C8667B', glow: '#E3A3B1', ink: '#16121C', rim: 0xebcb8a },
+  { base: '#A8B872', glow: '#D2DCA6', ink: '#16121C', rim: 0x4f6f94 }
+];
+
+/* =========================================================
+   Estado animado por el scroll
+   ========================================================= */
+const S = {
+  assemble: 0, explode: 0, labels: 0, scene: 0, car: 0, spin: 0, light: 0.12,
+  cx: 0, cy: 2.4, cz: 9.5, tx: 0, ty: 0.55, tz: 0, fov: 32
+};
+const bgEl = document.querySelector('.bg');
+const bg = { base: '#16121C', glow: '#8E3F57' };
+function setBg() {
+  bgEl.style.setProperty('--base', bg.base);
+  bgEl.style.setProperty('--glow', bg.glow);
+}
+
+/* =========================================================
+   Bucle de render
+   ========================================================= */
+const v3 = new THREE.Vector3();
+const tmpQ = new THREE.Quaternion();
+const mouse = { x: 0, y: 0, sx: 0, sy: 0 };
+addEventListener('pointermove', (e) => {
+  mouse.x = (e.clientX / innerWidth - 0.5) * 2;
+  mouse.y = (e.clientY / innerHeight - 0.5) * 2;
+});
+const clock = new THREE.Clock();
+const dishEls = Array.from(document.querySelectorAll('.dish-info'));
+const dishBox = document.querySelector('.dishes');
+const cA = new THREE.Color(), cB = new THREE.Color();
+let active = true;
+let fichaOpen = false;
+
+function frame() {
+  requestAnimationFrame(frame);
+  if (!active || fichaOpen) return;
+  const t = clock.getElapsedTime();
+  const aspect = innerWidth / innerHeight;
+  const portrait = aspect < 1;
+  const fit = portrait ? 1 + (1 - aspect) * 1.25 : 1;
+
+  mouse.sx += (mouse.x - mouse.sx) * 0.05;
+  mouse.sy += (mouse.y - mouse.sy) * 0.05;
+
+  // Piezas: de dispersas a armadas
+  pieces.forEach((p) => {
+    const u = p.userData;
+    const lp = ease(clamp01((S.assemble * 1.55 - u.delay * 0.55)));
+    const float = reduce ? 0 : (1 - lp) * 0.12;
+    p.position.lerpVectors(u.scatter, u.home, lp);
+    p.position.y += Math.sin(t * 1.3 + u.delay * 9) * float;
+    tmpQ.copy(u.randQ);
+    if (!reduce) tmpQ.multiply(new THREE.Quaternion().setFromEuler(new THREE.Euler(0, t * u.spin * (1 - lp), 0)));
+    p.quaternion.slerpQuaternions(tmpQ, u.homeQ, lp);
+  });
+
+  // Despiece
+  const spread = portrait ? 0.55 : 1;
+  for (const name in EXPLODE) {
+    const [x, y, z] = EXPLODE[name];
+    layers[name].position.set(x * S.explode * spread, y * S.explode * (portrait ? 1.15 : 1), z * S.explode);
+  }
+  ceviche.rotation.y = S.spin + (reduce ? 0 : mouse.sx * 0.08);
+  ceviche.visible = S.scene < 0.5;
+  carousel.visible = S.scene >= 0.5;
+
+  // Carrusel
+  if (carousel.visible) {
+    const n = DISHES.length;
+    carousel.rotation.y = -S.car * ((Math.PI * 2) / n);
+    DISHES.forEach((h, i) => {
+      const d = Math.abs(S.car - i);
+      const k = clamp01(1 - d);
+      h.scale.setScalar(lerp(0.55, 1, ease(k)));
+      h.userData.inner.rotation.y = t * (reduce ? 0 : 0.25) + i;
+      h.rotation.x = 0.0;
+    });
+    carousel.position.set(portrait ? 0 : 1.9, portrait ? 1.1 : 0, 0);
+    const i0 = Math.min(n - 1, Math.floor(S.car)), i1 = Math.min(n - 1, i0 + 1), f = ease(clamp01((S.car - i0 - 0.3) / 0.4));
+    bg.base = '#' + cA.set(DISH_COLORS[i0].base).lerp(cB.set(DISH_COLORS[i1].base), f).getHexString();
+    bg.glow = '#' + cA.set(DISH_COLORS[i0].glow).lerp(cB.set(DISH_COLORS[i1].glow), f).getHexString();
+    rim.color.set(DISH_COLORS[Math.round(S.car)].rim);
+    dishBox.style.setProperty('--ink', f > 0.5 ? DISH_COLORS[i1].ink : DISH_COLORS[i0].ink);
+    setBg();
+    dishEls.forEach((el, i) => {
+      const o = clamp01(1 - Math.abs(S.car - i) * 2.6) * clamp01((S.scene - 0.5) * 2);
+      el.style.opacity = o;
+      el.style.pointerEvents = o > 0.5 ? 'auto' : 'none';
+      el.style.transform = `translateY(${(S.car - i) * -40}px)`;
+    });
+  } else {
+    dishEls.forEach((el) => { el.style.opacity = 0; el.style.pointerEvents = 'none'; });
+  }
+
+  // Luz principal
+  key.intensity = lerp(0.35, 5.2, S.light);
+  if (S.scene >= 0.5) {
+    key.position.set(carousel.position.x + 1.6, 9 + carousel.position.y, 7.5);
+    key.target.position.set(carousel.position.x, carousel.position.y + 0.5, 3.4);
+  } else {
+    key.position.set(2.2, 11, 4.5);
+    key.target.position.set(0, 0.6, 0);
+  }
+
+  // Cámara
+  const tx = S.tx, ty = S.ty, tz = S.tz;
+  camera.position.set(tx + (S.cx - tx) * fit + mouse.sx * 0.25, ty + (S.cy - ty) * fit - mouse.sy * 0.15, tz + (S.cz - tz) * fit);
+  camera.fov = S.fov;
+  camera.aspect = aspect;
+  camera.updateProjectionMatrix();
+  camera.lookAt(tx, ty, tz);
+  if (S.cy > 5 && Math.abs(S.cz) < 0.5) camera.up.set(0, 0, -1); else camera.up.set(0, 1, 0);
+
+  // Etiquetas
+  const showL = S.labels > 0.001 && ceviche.visible;
+  labelEls.forEach((L, i) => {
+    if (!showL || (portrait && i >= 5 && i !== 6 && i !== 8)) { L.el.style.opacity = 0; return; }
+    v3.copy(L.anchor);
+    L.layer.localToWorld(v3);
+    v3.project(camera);
+    const x = (v3.x * 0.5 + 0.5) * innerWidth;
+    const y = (-v3.y * 0.5 + 0.5) * innerHeight;
+    const left = x < innerWidth * 0.5;
+    L.el.classList.toggle('left', left);
+    const w = L.el.offsetWidth;
+    const lx = Math.max(8, Math.min(innerWidth - w - 8, left ? x - w + 5 : x - 5));
+    L.el.style.transform = `translate(${lx}px, ${y - L.el.offsetHeight / 2}px)`;
+    L.el.style.opacity = clamp01(S.labels * LABELS.length - i * 0.55);
+  });
+
+  renderer.render(scene, camera);
+}
+
+addEventListener('resize', () => {
+  renderer.setSize(innerWidth, innerHeight);
+  placeScatter();
+});
+
+/* =========================================================
+   Coreografía del scroll
+   ========================================================= */
+const { gsap, ScrollTrigger } = window;
+gsap.registerPlugin(ScrollTrigger);
+
+let lenis = null;
+if (window.Lenis && !reduce) {
+  lenis = new Lenis({ lerp: LITE ? 0.16 : 0.085 });
+  lenis.on('scroll', ScrollTrigger.update);
+  gsap.ticker.add((tt) => lenis.raf(tt * 1000));
+  gsap.ticker.lagSmoothing(0);
+}
+
+/* Polvo de luz: partículas doradas flotando (extra, sin quitar nada) */
+{
+  const N = LITE ? 90 : 260;
+  const pr = rng(7);
+  const pos = new Float32Array(N * 3);
+  for (let i = 0; i < N; i++) { pos[i * 3] = (pr() - 0.5) * 14; pos[i * 3 + 1] = (pr() - 0.2) * 9; pos[i * 3 + 2] = (pr() - 0.5) * 8 - 1; }
+  const pg = new THREE.BufferGeometry();
+  pg.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+  const dust = new THREE.Points(pg, new THREE.PointsMaterial({ color: 0xffd9a0, size: LITE ? 0.035 : 0.028, transparent: true, opacity: 0.55, depthWrite: false, sizeAttenuation: true }));
+  scene.add(dust);
+  if (!reduce) gsap.ticker.add((tt) => { dust.rotation.y = tt * 0.03; dust.position.y = Math.sin(tt * 0.4) * 0.15; });
+}
+
+const nav = document.querySelector('.nav');
+const title = document.querySelector('.big-title');
+const milk = document.querySelector('.milk');
+const q = (s) => document.querySelector(s);
+
+const tl = gsap.timeline({
+  defaults: { ease: 'none' },
+  scrollTrigger: {
+    trigger: '.stage', start: 'top top', end: LITE ? '+=900%' : '+=1400%', pin: true, scrub: LITE ? 0.5 : 1,
+    onUpdate: (st) => nav.classList.toggle('solid', st.progress > 0.01),
+    onLeave: () => { active = false; nav.classList.add('solid'); },
+    onEnterBack: () => { active = true; }
+  }
+});
+
+// 1. Se arma: los ingredientes caen al cuenco; el título se comprime y sube
+tl.to(q('.p-hero'), { autoAlpha: 0, duration: 0.3 }, 0)
+  .to(S, { assemble: 1, duration: 2.2, ease: 'power1.inOut' }, 0)
+  .to(S, { light: 1, duration: 1.1, ease: 'power2.in' }, 1.3)
+  .to(S, { cy: 3.6, cz: 7.4, ty: 0.6, duration: 2.2, ease: 'power2.inOut' }, 0)
+  .to(title, { scale: 0.32, yPercent: -150, '--wd': 62, duration: 2, ease: 'power2.inOut' }, 0)
+  .to(S, { spin: 0.9, duration: 3, ease: 'power1.inOut' }, 0.4)
+  .to(q('.p-six'), { autoAlpha: 1, y: 0, duration: 0.4, startAt: { y: 40 } }, 2.1)
+  .to(q('.p-six'), { autoAlpha: 0, y: -30, duration: 0.4 }, 3.1)
+  .fromTo(title, { autoAlpha: 1 }, { autoAlpha: 0, duration: 0.4, immediateRender: false }, 3.1);
+
+// 2. Se desarma en capas, con cámara en tres cuartos
+tl.to(S, { explode: 1, duration: 1.8, ease: 'power3.inOut' }, 3.3)
+  .to(S, { cx: 7.4, cy: 3.0, cz: 9.8, ty: 0.95, fov: 34, duration: 1.8, ease: 'power2.inOut' }, 3.3)
+  .to(bg, { base: '#12101F', glow: '#8A6A33', duration: 1.6, onUpdate: setBg }, 3.3)
+  .to(rim.color, { r: 1, g: 0.7, b: 0.1, duration: 1.6 }, 3.3)
+  .to(q('.p-explode'), { autoAlpha: 1, duration: 0.4 }, 4.4)
+  .to(S, { labels: 1, duration: 1.1 }, 4.6)
+  .to(S, { spin: 1.6, duration: 2.6 }, 4.2)
+  .to({}, { duration: 0.6 }, 6.2);
+
+// 3. Se vuelve a armar y la cámara sube sobre el plato
+tl.to(S, { labels: 0, duration: 0.4 }, 6.9)
+  .to(q('.p-explode'), { autoAlpha: 0, duration: 0.4 }, 6.9)
+  .to(S, { explode: 0, duration: 1.4, ease: 'power3.inOut' }, 7.1)
+  .to(S, { cx: 0, cy: 8.5, cz: 0.01, tx: 0, ty: 0.5, tz: 0, fov: 34, duration: 1.6, ease: 'power2.inOut' }, 7.1)
+  .to(S, { light: 0.42, duration: 1.4 }, 7.1)
+  .to(bg, { base: '#101626', glow: '#4F6F94', duration: 1.4, onUpdate: setBg }, 7.1)
+  .to(rim.color, { r: 0.14, g: 0.34, b: 1, duration: 1.4 }, 7.1)
+  .to(q('.p-dive'), { autoAlpha: 1, duration: 0.4 }, 8.3)
+  .to(q('.p-dive'), { autoAlpha: 0, duration: 0.3 }, 9.0);
+
+// 4. Zoom hacia adentro: atraviesa la leche de tigre
+tl.to(S, { cy: 0.75, fov: 60, spin: 2.4, duration: 1.6, ease: 'power3.in' }, 8.9)
+  .to(milk, { opacity: 1, duration: 0.45, ease: 'power1.in' }, 10.05)
+  .to(q('.p-fondo'), { autoAlpha: 1, duration: 0.35 }, 10.35)
+  .set(S, { scene: 1, light: 0.9, car: 0, cx: 0, cy: 3.6, cz: 12.5, tx: 0, ty: 0.7, tz: 0, fov: 32, spin: 0 }, 10.55)
+  .to(q('.p-fondo'), { autoAlpha: 0, duration: 0.3 }, 10.9)
+  .to(milk, { opacity: 0, duration: 0.6 }, 11.0)
+  .from(S, { cz: 7.5, cy: 2.0, duration: 0.9, ease: 'power2.out', immediateRender: false }, 11.0);
+
+// 5. Carrusel de platos (los colores cambian con cada plato)
+tl.to(S, { car: 1, duration: 1, ease: 'power2.inOut' }, 11.9)
+  .to(S, { car: 2, duration: 1, ease: 'power2.inOut' }, 13.2)
+  .to(S, { car: 3, duration: 1, ease: 'power2.inOut' }, 14.5)
+  .to({}, { duration: 0.8 }, 15.5);
+
+/* ---------- Navegación con anclas ---------- */
+document.querySelectorAll('a[href^="#"]').forEach((a) =>
+  a.addEventListener('click', (e) => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (!target) return;
+    e.preventDefault();
+    const st = ScrollTrigger.getAll().find((s) => s.pin === target);
+    const y = st ? st.start : target.getBoundingClientRect().top + scrollY;
+    if (lenis) lenis.scrollTo(y, { duration: 1.6 }); else scrollTo({ top: y, behavior: 'smooth' });
+  })
+);
+
+/* ---------- Carta ---------- */
+const tabs = Array.from(document.querySelectorAll('[role="tab"]'));
+function selectTab(tab, focus) {
+  tabs.forEach((x) => {
+    const on = x === tab;
+    x.setAttribute('aria-selected', on);
+    x.tabIndex = on ? 0 : -1;
+    const panel = document.getElementById(x.getAttribute('aria-controls'));
+    panel.hidden = !on;
+    if (on && !reduce) gsap.fromTo(panel.children, { opacity: 0, x: -24 }, { opacity: 1, x: 0, duration: 0.4, stagger: 0.05, ease: 'power3.out', overwrite: true });
+  });
+  if (focus) tab.focus();
+}
+tabs.forEach((x, i) => {
+  x.addEventListener('click', () => selectTab(x));
+  x.addEventListener('keydown', (e) => {
+    const map = { ArrowRight: (i + 1) % tabs.length, ArrowLeft: (i - 1 + tabs.length) % tabs.length, Home: 0, End: tabs.length - 1 };
+    if (e.key in map) { e.preventDefault(); selectTab(tabs[map[e.key]], true); }
+  });
+});
+
+/* ---------- Reservas por WhatsApp ---------- */
+// CAMBIAR por el número real del negocio (código de país + número, sin + ni espacios)
+const WA_NUMBER = '51941614879';
+const waOpen = (text) => window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(text)}`, '_blank', 'noopener');
+const form = document.getElementById('reserva-form');
+const fecha = document.getElementById('f-fecha');
+const nombre = document.getElementById('f-nombre');
+const personas = document.getElementById('f-personas');
+const err = document.getElementById('form-error');
+const ok = document.getElementById('form-ok');
+const iso = (d) => new Date(d.getTime() - d.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
+fecha.min = iso(new Date());
+fecha.value = iso(new Date(Date.now() + 86400000));
+let n = 2;
+form.querySelectorAll('[data-step]').forEach((b) => b.addEventListener('click', () => {
+  n = Math.min(20, Math.max(1, n + Number(b.dataset.step)));
+  personas.textContent = n;
+}));
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  err.textContent = '';
+  nombre.removeAttribute('aria-invalid');
+  fecha.removeAttribute('aria-invalid');
+  if (!nombre.value.trim()) { nombre.setAttribute('aria-invalid', 'true'); err.textContent = 'Escribe tu nombre para guardar la mesa.'; nombre.focus(); return; }
+  if (!fecha.value || fecha.value < fecha.min) { fecha.setAttribute('aria-invalid', 'true'); err.textContent = 'Elige una fecha desde hoy en adelante.'; fecha.focus(); return; }
+  const dia = new Date(fecha.value + 'T12:00:00').toLocaleDateString('es-PE', { weekday: 'long', day: 'numeric', month: 'long' });
+  const msg = `Hola Cevichería 635, quiero reservar una mesa. Nombre: ${nombre.value.trim()}. ${n} ${n === 1 ? 'persona' : 'personas'}, el ${dia} a las ${form.hora.value}. ¿Hay disponibilidad?`;
+  ok.hidden = false;
+  ok.textContent = `Casi listo, ${nombre.value.trim()}: se abre WhatsApp con tu reserva para ${n} ${n === 1 ? 'persona' : 'personas'}, ${dia}, ${form.hora.value}.`;
+  const small = document.createElement('small');
+  small.textContent = 'Envía el mensaje para confirmar tu mesa.';
+  ok.appendChild(small);
+  waOpen(msg);
+});
+document.getElementById('wa-btn').addEventListener('click', () => {
+  waOpen('Hola Cevichería 635, quiero hacer un pedido. ¿Me ayudan con la carta?');
+  document.getElementById('wa-note').textContent = 'Abriendo WhatsApp…';
+});
+document.getElementById('wa-float').addEventListener('click', (e) => {
+  e.preventDefault();
+  document.getElementById('reservar').scrollIntoView({ behavior: 'smooth' });
+});
+
+/* =========================================================
+   Ficha de cine: el plato se arma pieza por pieza
+   ========================================================= */
+const MX = {
+  langostino: new THREE.MeshPhysicalMaterial({ color: 0xf26b3a, roughness: 0.3, clearcoat: 0.8 }),
+  pulpo: new THREE.MeshPhysicalMaterial({ color: 0xb8456e, roughness: 0.3, clearcoat: 0.8 }),
+  pulpoIn: new THREE.MeshPhysicalMaterial({ color: 0xf6e3e6, roughness: 0.4 }),
+  concha: new THREE.MeshPhysicalMaterial({ color: 0x15121c, roughness: 0.25, clearcoat: 1 }),
+  conchaIn: new THREE.MeshPhysicalMaterial({ color: 0x3a2a3f, roughness: 0.2, clearcoat: 1 }),
+  choroIn: new THREE.MeshPhysicalMaterial({ color: 0xf08a3e, roughness: 0.35, clearcoat: 0.6 }),
+  crema: new THREE.MeshPhysicalMaterial({ color: 0xf0711f, roughness: 0.15, clearcoat: 1 }),
+  rocoto: new THREE.MeshPhysicalMaterial({ color: 0xd8261f, roughness: 0.12, clearcoat: 1 }),
+  soya: new THREE.MeshPhysicalMaterial({ color: 0x3a1a0c, roughness: 0.1, clearcoat: 1, transparent: true, opacity: 0.9 }),
+  ajonjoli: new THREE.MeshStandardMaterial({ color: 0xf3e6c4, roughness: 0.6 }),
+  verdeo: new THREE.MeshPhysicalMaterial({ color: 0x4fb83a, roughness: 0.3, clearcoat: 0.6 }),
+  arroz: new THREE.MeshStandardMaterial({ color: 0xe8a23a, roughness: 0.75 }),
+  arveja: new THREE.MeshPhysicalMaterial({ color: 0x5fb43a, roughness: 0.3, clearcoat: 0.6 }),
+  pimiento: new THREE.MeshPhysicalMaterial({ color: 0xd11a2a, roughness: 0.2, clearcoat: 1 }),
+  caldo: new THREE.MeshPhysicalMaterial({ color: 0xc8461f, roughness: 0.08, clearcoat: 1, transparent: true, opacity: 0.94 }),
+  tomate: new THREE.MeshPhysicalMaterial({ color: 0xe0281f, roughness: 0.2, clearcoat: 1 }),
+  chicha: new THREE.MeshPhysicalMaterial({ color: 0x4a0f3c, roughness: 0.05, clearcoat: 1, transparent: true, opacity: 0.94 }),
+  pina: new THREE.MeshPhysicalMaterial({ color: 0xf6c832, roughness: 0.35, clearcoat: 0.5 }),
+  canela: new THREE.MeshStandardMaterial({ color: 0x7a3d1a, roughness: 0.8 }),
+  limonada: new THREE.MeshPhysicalMaterial({ color: 0xd9ef9a, roughness: 0.25, transparent: true, opacity: 0.92 }),
+  espuma: new THREE.MeshPhysicalMaterial({ color: 0xfbf8ee, roughness: 0.55 }),
+  maracuya: new THREE.MeshPhysicalMaterial({ color: 0xf7b51a, roughness: 0.15, clearcoat: 1, transparent: true, opacity: 0.94 }),
+  pepa: new THREE.MeshStandardMaterial({ color: 0x1c1208, roughness: 0.4 }),
+  cerveza: new THREE.MeshPhysicalMaterial({ color: 0x5a3008, roughness: 0.05, clearcoat: 1 }),
+  etiqueta: new THREE.MeshStandardMaterial({ color: 0xf6f1e4, roughness: 0.6 }),
+  tapa: new THREE.MeshStandardMaterial({ color: 0xc9a227, roughness: 0.3, metalness: 0.8 })
+};
+Object.values(MX).forEach((m) => { m.envMapIntensity = 0.45; });
+
+const at = (o, x, y, z, rx = 0, ry = 0, rz = 0) => { o.position.set(x, y, z); o.rotation.set(rx, ry, rz); return o; };
+const spread = (rand, n, r, cx = 0, cz = 0, min = 0.18) => {
+  const pts = [];
+  let tries = 0;
+  while (pts.length < n && tries++ < 3000) {
+    const a = rand() * Math.PI * 2, d = Math.sqrt(rand()) * r;
+    const x = cx + Math.cos(a) * d, z = cz + Math.sin(a) * d;
+    if (pts.every((p) => Math.hypot(p[0] - x, p[1] - z) > min)) pts.push([x, z]);
+  }
+  return pts;
+};
+const fromLayer = (name) => layers[name].children.map((p) => {
+  const c = p.clone(true);
+  c.position.copy(p.userData.home);
+  c.quaternion.copy(p.userData.homeQ);
+  return c;
+});
+function langostino(rand) {
+  const m = new THREE.Mesh(new THREE.TorusGeometry(0.17, 0.065, 10, 20, Math.PI * 1.35), MX.langostino);
+  m.rotation.set(-Math.PI / 2 + (rand() - 0.5) * 0.5, 0, rand() * 6);
+  return m;
+}
+function pulpo(rand) {
+  const g = new THREE.Group();
+  g.add(new THREE.Mesh(new THREE.CylinderGeometry(0.09, 0.09, 0.06, 18), MX.pulpo));
+  g.add(at(new THREE.Mesh(new THREE.CylinderGeometry(0.05, 0.05, 0.065, 14), MX.pulpoIn), 0, 0, 0));
+  g.rotation.set((rand() - 0.5) * 0.6, 0, (rand() - 0.5) * 0.6);
+  return g;
+}
+function concha(dark = true) {
+  const g = new THREE.Group();
+  const shell = new THREE.Mesh(new THREE.SphereGeometry(0.3, 24, 12, 0, Math.PI * 2, 0, Math.PI / 2), dark ? MX.concha : M.esmalte);
+  shell.scale.set(1, 0.45, 0.78);
+  shell.rotation.x = Math.PI;
+  const inn = new THREE.Mesh(new THREE.CircleGeometry(0.27, 24), dark ? MX.conchaIn : MX.choroIn);
+  inn.scale.set(1, 0.76, 1);
+  inn.rotation.x = -Math.PI / 2;
+  inn.position.y = 0.005;
+  g.add(shell, inn);
+  return g;
+}
+function choro() {
+  const g = concha(true);
+  g.children[1].material = MX.choroIn;
+  g.scale.set(0.9, 0.9, 0.62);
+  return g;
+}
+function vaso(h = 2, r = 0.8) {
+  const g = new THREE.Group();
+  g.add(at(new THREE.Mesh(new THREE.CylinderGeometry(r, r * 0.82, h, 48, 1, true), M.vidrio), 0, h / 2, 0));
+  g.add(at(new THREE.Mesh(new THREE.CylinderGeometry(r * 0.82, r * 0.82, 0.12, 48), M.vidrio), 0, 0.06, 0));
+  g.add(contactShadow(r * 1.8));
+  return g;
+}
+function liquido(mat, h = 1.5, r = 0.8) {
+  return at(new THREE.Mesh(new THREE.CylinderGeometry(r * 0.96, r * 0.8, h, 48), mat), 0, 0.12 + h / 2, 0);
+}
+function hojita(rand, mat = M.culantro) {
+  const l = new THREE.Mesh(G.leaf, mat);
+  l.scale.setScalar(1.4);
+  l.rotation.set(-Math.PI / 2 + 0.3, 0, rand() * 6);
+  return l;
+}
+function bowlBase() {
+  return [layers.bowl.clone(true), layers.leche.clone(true)].map((g) => { g.position.set(0, 0, 0); return g; });
+}
+function platoHondo(r = 1.75) {
+  const g = new THREE.Group();
+  const outer = new THREE.LatheGeometry([new THREE.Vector2(0.001, 0), new THREE.Vector2(r * 0.6, 0), new THREE.Vector2(r, 0.4), new THREE.Vector2(r * 1.06, 0.48)], 64);
+  const inner = new THREE.LatheGeometry([new THREE.Vector2(r * 1.0, 0.48), new THREE.Vector2(r * 0.92, 0.38), new THREE.Vector2(r * 0.55, 0.12), new THREE.Vector2(0.001, 0.1)], 64);
+  const ci = M.ceramica.clone(); ci.side = THREE.DoubleSide;
+  g.add(new THREE.Mesh(outer, M.esmalte), new THREE.Mesh(inner, ci), contactShadow(r * 1.5));
+  return g;
+}
+
+// Pasos de cada plato: [nombre, detalle, () => objetos]
+const S_CEVICHE = (extra = []) => [
+  ['Cuenco y leche de tigre', 'Limón, sal y el jugo del pescado', bowlBase],
+  ['Pescado del día', 'En cubos, cortado al momento', () => fromLayer('pescado')],
+  ...extra,
+  ['Cebolla roja', 'En pluma, lavada en agua helada', () => fromLayer('cebolla')],
+  ['Ají limo', 'En rodajas finas', () => fromLayer('aji')],
+  ['Culantro', 'Picado al final', () => fromLayer('culantro')],
+  ['Camote y choclo', 'Camote glaseado, choclo de grano grande', () => [...fromLayer('camote'), ...fromLayer('choclo')]],
+  ['Limón y cancha', 'Para exprimir y para el crocante', () => [...fromLayer('limon'), ...fromLayer('cancha')]]
+];
+function tiraditoSteps(salsaMat, salsaName, salsaDesc, toppings) {
+  return [
+    ['Plato frío', 'Se enfría antes de servir', () => [plato(1.8)]],
+    [salsaName, salsaDesc, () => [at(new THREE.Mesh(new THREE.CylinderGeometry(1.35, 1.35, 0.03, 60), salsaMat), 0, 0.135, 0)]],
+    ['Láminas de pescado', 'Cortadas finas, al momento', () => Array.from({ length: 7 }, (_, i) =>
+      at(new THREE.Mesh(new RoundedBoxGeometry(1.7 - Math.abs(i - 3) * 0.14, 0.06, 0.3, 2, 0.028), M.pescado), 0, 0.19 + i * 0.004, -0.9 + i * 0.3, 0, -0.5, 0))],
+    ...toppings
+  ];
+}
+function vasoSteps(liqMat, liqName, liqDesc, toppings, h = 2, r = 0.8) {
+  return [
+    ['Vaso helado', 'Directo del congelador', () => [vaso(h, r)]],
+    [liqName, liqDesc, () => [liquido(liqMat, h * 0.76, r)]],
+    ...toppings
+  ];
+}
+
+const FICHAS = {
+  'ceviche-clasico': { cat: 'Ceviches', name: 'Ceviche clásico', price: 'S/ 38', desc: 'Lenguado del día, cebolla roja, ají limo, camote glaseado y choclo.', steps: S_CEVICHE() },
+  'ceviche-mixto': { cat: 'Ceviches', name: 'Ceviche mixto', price: 'S/ 44', desc: 'Pescado, pulpo, langostinos y conchas.', steps: S_CEVICHE([
+    ['Pulpo y langostinos', 'Cocidos al punto, nunca chiclosos', (r = rng(4)) => [
+      ...spread(r, 6, 0.85).map(([x, z]) => at(pulpo(r), x, 1.12, z)),
+      ...spread(r, 5, 0.8, 0, 0, 0.35).map(([x, z]) => at(langostino(r), x, 1.18, z, -Math.PI / 2, 0, r() * 6))
+    ]]
+  ]) },
+  'ceviche-a-lo-macho': { cat: 'Ceviches', name: 'Ceviche a lo macho', price: 'S/ 46', desc: 'Bañado en crema de mariscos y rocoto.', steps: S_CEVICHE([
+    ['Crema de mariscos y rocoto', 'Espesa, picante y caliente', () => {
+      const m = new THREE.Mesh(new THREE.SphereGeometry(1.05, 40, 16, 0, Math.PI * 2, 0, Math.PI / 2.3), MX.crema);
+      m.scale.set(1, 0.42, 1);
+      return [at(m, 0, 0.62, 0)];
+    }]
+  ]) },
+  'ceviche-de-conchas-negras': { cat: 'Ceviches', name: 'Ceviche de conchas negras', price: 'S/ 52', desc: 'Solo cuando llegan frescas de Tumbes.', steps: S_CEVICHE([
+    ['Conchas negras', 'De los manglares de Tumbes', (r = rng(8)) => spread(r, 5, 1.0, 0, 0, 0.5).map(([x, z]) => at(concha(), x, 1.12, z, 0, r() * 6, 0))]
+  ]) },
+  'leche-de-tigre': { cat: 'Ceviches', name: 'Leche de tigre', price: 'S/ 22', desc: 'El jugo del ceviche en vaso, con chicharrón de calamar.', steps: vasoSteps(M.leche, 'Leche de tigre', 'Limón, ají, pescado y apio licuados', [
+    ['Trocitos de pescado', 'Del mismo ceviche', (r = rng(21)) => spread(r, 8, 0.48, 0, 0, 0.2).map(([x, z]) => at(pescado(0.22), x, 1.74, z, r(), r() * 3, r()))],
+    ['Chicharrón de calamar', 'Frito al momento', (r = rng(22)) => spread(r, 4, 0.45, 0, 0, 0.3).map(([x, z]) => at(new THREE.Mesh(new THREE.TorusGeometry(0.16, 0.06, 12, 28), M.frito), x, 1.95, z, -Math.PI / 2 + (r() - 0.5), 0, 0))],
+    ['Culantro y limón', 'Para terminar', (r = rng(23)) => [...spread(r, 4, 0.4).map(([x, z]) => at(culantro(r), x, 2.02, z)), at(limon(0.3), 0.75, 1.95, 0.2, 0.2, 0, Math.PI / 2.4)]]
+  ]) },
+  'tiradito-al-aji-amarillo': { cat: 'Tiraditos', name: 'Tiradito al ají amarillo', price: 'S/ 42', desc: 'Láminas finas de pescado bañadas en crema de ají amarillo.', steps: tiraditoSteps(M.salsaAji, 'Crema de ají amarillo', 'Licuada con limón y aceite', [
+    ['Ají limo', 'En rodajas', (r = rng(9)) => spread(r, 10, 1.0).map(([x, z]) => at(aji(r, 1.1), x, 0.24, z))],
+    ['Culantro', 'Hojas enteras', (r = rng(10)) => spread(r, 6, 0.95).map(([x, z]) => at(culantro(r, 1.1), x, 0.25, z, 0, r() * 6, 0))]
+  ]) },
+  'tiradito-al-rocoto': { cat: 'Tiraditos', name: 'Tiradito al rocoto', price: 'S/ 42', desc: 'Más picante, con crema de rocoto y choclo.', steps: tiraditoSteps(MX.rocoto, 'Crema de rocoto', 'Picante de Arequipa', [
+    ['Choclo desgranado', 'Grano grande y dulce', (r = rng(11)) => spread(r, 14, 1.05, 0, 0, 0.14).map(([x, z]) => { const k = new THREE.Mesh(G.esfera, M.choclo); k.scale.set(0.07, 0.055, 0.075); return at(k, x, 0.25, z); })],
+    ['Culantro', 'Hojas enteras', (r = rng(12)) => spread(r, 5, 0.95).map(([x, z]) => at(culantro(r, 1.1), x, 0.25, z, 0, r() * 6, 0))]
+  ]) },
+  'tiradito-nikkei': { cat: 'Tiraditos', name: 'Tiradito nikkei', price: 'S/ 45', desc: 'Soya, limón, ajonjolí y cebollita china.', steps: tiraditoSteps(MX.soya, 'Salsa nikkei', 'Soya, limón y aceite de ajonjolí', [
+    ['Ajonjolí tostado', 'Blanco y crocante', (r = rng(13)) => spread(r, 40, 1.0, 0, 0, 0.06).map(([x, z]) => { const s = new THREE.Mesh(G.esfera, MX.ajonjoli); s.scale.set(0.025, 0.012, 0.016); return at(s, x, 0.23, z, 0, r() * 6, 0); })],
+    ['Cebollita china', 'En aros finos', (r = rng(14)) => spread(r, 10, 1.0).map(([x, z]) => at(new THREE.Mesh(new THREE.TorusGeometry(0.06, 0.018, 8, 18), MX.verdeo), x, 0.24, z, -Math.PI / 2 + (r() - 0.5) * 0.5, 0, 0))]
+  ]) },
+  'arroz-con-mariscos': { cat: 'Calientes', name: 'Arroz con mariscos', price: 'S/ 45', desc: 'Choros, langostinos, pimiento y arvejas.', steps: [
+    ['Plato hondo', 'Caliente, para que no se enfríe', () => [platoHondo()]],
+    ['Arroz meloso', 'Con ají panca y culantro', () => {
+      const geo = new THREE.SphereGeometry(1.35, 48, 24, 0, Math.PI * 2, 0, Math.PI / 2);
+      const pos = geo.attributes.position;
+      for (let k = 0; k < pos.count; k++) { const y = pos.getY(k); pos.setY(k, y * 0.32 + Math.sin(pos.getX(k) * 30) * Math.cos(pos.getZ(k) * 28) * 0.015); }
+      geo.computeVertexNormals();
+      return [at(new THREE.Mesh(geo, MX.arroz), 0, 0.12, 0)];
+    }],
+    ['Choros', 'De Ilo, abiertos al vapor', (r = rng(15)) => spread(r, 5, 0.95, 0, 0, 0.55).map(([x, z]) => at(choro(), x, 0.5, z, 0, r() * 6, 0))],
+    ['Langostinos', 'Enteros, a la plancha', (r = rng(16)) => spread(r, 5, 0.9, 0, 0, 0.45).map(([x, z]) => at(langostino(r), x, 0.56, z, -Math.PI / 2, 0, r() * 6))],
+    ['Pimiento y arvejas', 'Color y dulzor', (r = rng(17)) => [
+      ...spread(r, 16, 1.05, 0, 0, 0.12).map(([x, z]) => { const a = new THREE.Mesh(G.esfera, MX.arveja); a.scale.setScalar(0.055); return at(a, x, 0.5, z); }),
+      ...spread(r, 7, 1.0, 0, 0, 0.25).map(([x, z]) => at(new THREE.Mesh(new THREE.TorusGeometry(0.14, 0.03, 8, 16, Math.PI * 0.8), MX.pimiento), x, 0.52, z, -Math.PI / 2, 0, r() * 6))
+    ]],
+    ['Culantro', 'Picado encima', (r = rng(18)) => spread(r, 6, 0.9).map(([x, z]) => at(culantro(r), x, 0.56, z, 0, r() * 6, 0))]
+  ] },
+  'chicharron-de-pescado': { cat: 'Calientes', name: 'Chicharrón de pescado', price: 'S/ 36', desc: 'Frito al momento, con salsa criolla y limón.', steps: chicharronSteps(false) },
+  'jalea-mixta': { cat: 'Calientes', name: 'Jalea mixta', price: 'S/ 58', desc: 'Pescado, calamar y langostinos fritos, para compartir.', steps: chicharronSteps(true) },
+  'sudado-de-pescado': { cat: 'Calientes', name: 'Sudado de pescado', price: 'S/ 40', desc: 'Al vapor con tomate, cebolla y chicha de jora.', steps: [
+    ['Plato hondo', 'Caliente', () => [platoHondo()]],
+    ['Caldo de chicha de jora', 'Con ají panca y tomate', () => { const c = new THREE.Mesh(new THREE.CircleGeometry(1.5, 48), MX.caldo); return [at(c, 0, 0.32, 0, -Math.PI / 2)]; }],
+    ['Filete de pescado', 'Entero, al vapor', () => [at(new THREE.Mesh(new RoundedBoxGeometry(1.5, 0.22, 0.62, 3, 0.1), M.pescado), 0, 0.42, 0, 0, 0.3, 0)]],
+    ['Tomate y cebolla', 'En gajos gruesos', (r = rng(19)) => [
+      ...spread(r, 5, 1.0, 0, 0, 0.4).map(([x, z]) => { const t = new THREE.Mesh(new THREE.SphereGeometry(0.2, 18, 12, 0, Math.PI), MX.tomate); return at(t, x, 0.42, z, -Math.PI / 2, 0, r() * 6); }),
+      ...spread(r, 6, 1.05, 0, 0, 0.3).map(([x, z]) => at(cebolla(r, 0.9), x, 0.44, z, -Math.PI / 2, 0, r() * 6))
+    ]],
+    ['Culantro', 'Ramitas enteras', (r = rng(20)) => spread(r, 5, 0.9).map(([x, z]) => at(culantro(r, 1.2), x, 0.58, z, 0, r() * 6, 0))]
+  ] },
+  'chicha-morada': { cat: 'Bebidas', name: 'Chicha morada', price: 'S/ 18', desc: 'Maíz morado hervido con piña, canela y clavo.', steps: vasoSteps(MX.chicha, 'Chicha morada', 'Maíz morado, piña, canela y clavo', [
+    ['Piña picada', 'En cubitos', (r = rng(24)) => spread(r, 6, 0.45, 0, 0, 0.2).map(([x, z]) => at(new THREE.Mesh(new RoundedBoxGeometry(0.16, 0.16, 0.16, 2, 0.03), MX.pina), x, 1.72, z, r(), r(), r()))],
+    ['Canela', 'En rama', () => [at(new THREE.Mesh(new THREE.CylinderGeometry(0.04, 0.04, 1.2, 10), MX.canela), 0.3, 1.9, 0, 0, 0, 0.35)]]
+  ]) },
+  'limonada-frozen': { cat: 'Bebidas', name: 'Limonada frozen', price: 'S/ 12', desc: 'Limón, hielo y hierbabuena licuados.', steps: vasoSteps(MX.limonada, 'Limonada frozen', 'Limón y hielo licuados', [
+    ['Espuma', 'Por la licuada', () => { const e = new THREE.Mesh(new THREE.SphereGeometry(0.78, 32, 12, 0, Math.PI * 2, 0, Math.PI / 2), MX.espuma); e.scale.y = 0.3; return [at(e, 0, 1.64, 0)]; }],
+    ['Hierbabuena y limón', 'Para el aroma', (r = rng(25)) => [...Array.from({ length: 4 }, () => at(hojita(r, MX.verdeo), (r() - 0.5) * 0.4, 1.9, (r() - 0.5) * 0.4)), at(limon(0.3), 0.72, 1.85, 0.1, 0.2, 0, Math.PI / 2.4)]]
+  ]) },
+  'maracuya-sour': { cat: 'Bebidas', name: 'Maracuyá sour', price: 'S/ 22', desc: 'Pisco, maracuyá y clara de huevo.', steps: vasoSteps(MX.maracuya, 'Pisco y maracuyá', 'Batidos con hielo', [
+    ['Espuma de clara', 'Bien batida', () => { const e = new THREE.Mesh(new THREE.CylinderGeometry(0.7, 0.7, 0.28, 40), MX.espuma); return [at(e, 0, 1.45, 0)]; }],
+    ['Pepas de maracuyá', 'Encima de la espuma', (r = rng(26)) => spread(r, 12, 0.45, 0, 0, 0.1).map(([x, z]) => { const p = new THREE.Mesh(G.esfera, MX.pepa); p.scale.set(0.04, 0.02, 0.03); return at(p, x, 1.6, z); })]
+  ], 1.6, 0.72) },
+  'cerveza': { cat: 'Bebidas', name: 'Cerveza', price: 'S/ 14', desc: 'Botella de 620 ml, bien helada.', steps: [
+    ['Botella helada', '620 ml', () => {
+      const g = new THREE.Group();
+      g.add(at(new THREE.Mesh(new THREE.CylinderGeometry(0.42, 0.42, 1.9, 40), MX.cerveza), 0, 0.95, 0));
+      g.add(at(new THREE.Mesh(new THREE.CylinderGeometry(0.16, 0.42, 0.6, 40), MX.cerveza), 0, 2.2, 0));
+      g.add(at(new THREE.Mesh(new THREE.CylinderGeometry(0.15, 0.16, 0.6, 30), MX.cerveza), 0, 2.8, 0));
+      g.add(contactShadow(1));
+      return [g];
+    }],
+    ['Etiqueta', 'Hecha en Perú', () => [at(new THREE.Mesh(new THREE.CylinderGeometry(0.43, 0.43, 0.8, 40, 1, true), MX.etiqueta), 0, 1.0, 0)]],
+    ['Chapa', 'Destapada en la mesa', () => [at(new THREE.Mesh(new THREE.CylinderGeometry(0.18, 0.18, 0.06, 20), MX.tapa), 0, 3.13, 0)]]
+  ] }
+};
+function chicharronSteps(jalea) {
+  const chunks = (r = rng(jalea ? 40 : 33)) => Array.from({ length: jalea ? 7 : 9 }, (_, i) => {
+    const geo = new THREE.IcosahedronGeometry(0.3 + r() * 0.08, 2);
+    const pos = geo.attributes.position;
+    for (let k = 0; k < pos.count; k++) {
+      const v = new THREE.Vector3().fromBufferAttribute(pos, k);
+      v.multiplyScalar(1 + (Math.sin(v.x * 18) * Math.cos(v.z * 16) + Math.sin(v.y * 22)) * 0.06);
+      pos.setXYZ(k, v.x * 1.25, v.y * 0.75, v.z);
+    }
+    geo.computeVertexNormals();
+    const a = (i / 9) * Math.PI * 2 + r() * 0.3, d = i === 0 ? 0 : 0.55 + r() * 0.35;
+    return at(new THREE.Mesh(geo, M.frito), Math.cos(a) * d - 0.2, 0.34 + r() * 0.12, Math.sin(a) * d, r(), r() * 6, r() * 0.4);
+  });
+  const steps = [
+    ['Plato', 'Con papel para el aceite', () => [plato(1.8)]],
+    [jalea ? 'Pescado frito' : 'Chicharrón de pescado', 'Empanizado y frito al momento', () => chunks()]
+  ];
+  if (jalea) steps.push(['Calamar y langostinos', 'Fritos, bien crocantes', (r = rng(41)) => [
+    ...spread(r, 5, 0.9, -0.2, 0, 0.35).map(([x, z]) => at(new THREE.Mesh(new THREE.TorusGeometry(0.16, 0.06, 12, 28), M.frito), x, 0.62, z, -Math.PI / 2 + (r() - 0.5) * 0.6, 0, 0)),
+    ...spread(r, 4, 0.8, -0.2, 0, 0.4).map(([x, z]) => at(langostino(r), x, 0.66, z, -Math.PI / 2, 0, r() * 6))
+  ]]);
+  steps.push(
+    ['Salsa criolla', 'Cebolla, ají limo y limón', (r = rng(34)) => Array.from({ length: 8 }, () => at(cebolla(r, 0.7), 1.1 + (r() - 0.5) * 0.5, 0.26, -0.5 + (r() - 0.5) * 0.5, -Math.PI / 2, 0, r() * 6))],
+    ['Limón', 'Para exprimir encima', () => [at(limon(0.3), 1.15, 0.3, 0.55, -0.6, 0, 0.3)]]
+  );
+  return steps;
+}
+
+const ficha = document.querySelector('.ficha');
+const fCanvas = ficha.querySelector('.ficha-gl');
+const fStepsEl = document.getElementById('ficha-steps');
+let fRenderer = null, fScene, fCam, fSpot, fRim, fDish = null, fTl = null, fOpen = false, fLast = null, fStepEls = [];
+const fCamState = { r: 9, y: 4.2, a: 0.6, ty: 0.7, fov: 30 };
+
+function fInit() {
+  fRenderer = new THREE.WebGLRenderer({ canvas: fCanvas, antialias: true, alpha: true });
+  fRenderer.setPixelRatio(Math.min(devicePixelRatio, LITE ? 1.5 : 2));
+  fRenderer.outputColorSpace = THREE.SRGBColorSpace;
+  fRenderer.toneMapping = THREE.ACESFilmicToneMapping;
+  fRenderer.toneMappingExposure = 0.95;
+  fRenderer.setClearColor(0x000000, 0);
+  fScene = new THREE.Scene();
+  const pm = new THREE.PMREMGenerator(fRenderer);
+  fScene.environment = pm.fromScene(new RoomEnvironment(fRenderer), 0.04).texture;
+  fCam = new THREE.PerspectiveCamera(30, 1, 0.05, 100);
+  fSpot = new THREE.SpotLight(0xffe6c4, 0, 0, 0.42, 0.8, 0);
+  fSpot.position.set(1.5, 11, 4);
+  fSpot.target.position.set(0, 0.6, 0);
+  fRim = new THREE.DirectionalLight(0xc8667b, 3);
+  fRim.position.set(-6, 3, -5);
+  const soft = new THREE.DirectionalLight(0xffd9c0, 0.3);
+  soft.position.set(3, 6, 6);
+  fScene.add(fSpot, fSpot.target, fRim, soft);
+  fLoop();
+}
+function fResize() {
+  const portrait = innerWidth < innerHeight || innerWidth < 760;
+  fRenderer.setSize(innerWidth, innerHeight, false);
+  fCam.aspect = innerWidth / innerHeight;
+  // En escritorio el plato va a la izquierda; en celular, arriba
+  fCam.setViewOffset(innerWidth, innerHeight, portrait ? 0 : innerWidth * 0.2, portrait ? innerHeight * 0.17 : 0, innerWidth, innerHeight);
+}
+function fLoop() {
+  requestAnimationFrame(fLoop);
+  if (!fOpen) return;
+  const portrait = innerWidth < innerHeight;
+  const k = portrait ? 1.75 : 1;
+  fCamState.a += reduce ? 0 : 0.0016;
+  fCam.position.set(Math.sin(fCamState.a) * fCamState.r * k, fCamState.y * k, Math.cos(fCamState.a) * fCamState.r * k);
+  fCam.fov = fCamState.fov;
+  fCam.updateProjectionMatrix();
+  fCam.lookAt(0, fCamState.ty, 0);
+  fRenderer.render(fScene, fCam);
+}
+
+function fBuild(data) {
+  if (fDish) fScene.remove(fDish);
+  fDish = new THREE.Group();
+  fScene.add(fDish);
+  const groups = data.steps.map(([, , make]) => {
+    const g = new THREE.Group();
+    make().forEach((o) => g.add(o));
+    fDish.add(g);
+    return g;
+  });
+  const box = new THREE.Box3().setFromObject(fDish);
+  const h = box.max.y - box.min.y;
+  fCamState.ty = Math.max(0.5, h * 0.42);
+  fCamState.r = 8.6 + Math.max(0, h - 1.5) * 1.3;
+  return groups;
+}
+
+function fPlay(data) {
+  const groups = fBuild(data);
+  if (fTl) fTl.kill();
+  fStepEls.forEach((li) => li.classList.remove('on'));
+  const bars = ficha.querySelectorAll('.bar');
+  const info = ficha.querySelector('.ficha-info');
+  fTl = gsap.timeline();
+  fTl.set(fSpot, { intensity: 0 })
+    .fromTo(bars, { scaleY: 0 }, { scaleY: 1, duration: 0.6, ease: 'power3.out' }, 0)
+    .fromTo(fCamState, { y: 7.5, fov: 22, a: 0.1 }, { y: 4.2, fov: 30, a: 0.6, duration: 2.6, ease: 'power3.out' }, 0)
+    .fromTo(info, { autoAlpha: 0, x: 30 }, { autoAlpha: 1, x: 0, duration: 0.6, ease: 'power2.out' }, 0.3);
+  groups.forEach((g, i) => {
+    const t0 = 0.5 + i * (reduce ? 0.05 : 0.5);
+    const kids = g.children;
+    if (i === 0) {
+      fTl.fromTo(g.scale, { x: 0.6, y: 0.6, z: 0.6 }, { x: 1, y: 1, z: 1, duration: 0.8, ease: 'back.out(1.6)' }, t0)
+        .fromTo(g.rotation, { y: -1.2 }, { y: 0, duration: 1, ease: 'power3.out' }, t0)
+        .to(fSpot, { intensity: 5, duration: 0.7, ease: 'power2.in' }, t0);
+    } else {
+      kids.forEach((o) => {
+        const y = o.position.y;
+        fTl.fromTo(o.position, { y: y + 3.2 + Math.random() * 1.5 }, { y, duration: reduce ? 0.01 : 0.65, ease: 'bounce.out' }, t0 + Math.random() * 0.25);
+        fTl.fromTo(o.scale, { x: 0.01, y: 0.01, z: 0.01 }, { x: o.scale.x, y: o.scale.y, z: o.scale.z, duration: reduce ? 0.01 : 0.35, ease: 'power2.out' }, t0);
+      });
+    }
+    fTl.add(() => fStepEls[i] && fStepEls[i].classList.add('on'), t0 + 0.1);
+  });
+  fTl.to(bars, { scaleY: 0.45, duration: 0.8, ease: 'power2.inOut' }, '+=0.2');
+}
+
+function openFicha(id, trigger) {
+  const data = FICHAS[id];
+  if (!data) return;
+  if (!fRenderer) fInit();
+  fLast = trigger || document.activeElement;
+  document.getElementById('ficha-cat').textContent = data.cat;
+  document.getElementById('ficha-name').textContent = data.name;
+  document.getElementById('ficha-desc').textContent = data.desc;
+  document.getElementById('ficha-price').textContent = data.price;
+  fStepsEl.innerHTML = '';
+  fStepEls = data.steps.map(([n, d]) => {
+    const li = document.createElement('li');
+    const wrap = document.createElement('span');
+    const b = document.createElement('b'); b.textContent = n;
+    const s = document.createElement('small'); s.textContent = d;
+    wrap.append(b, s);
+    li.append(wrap);
+    fStepsEl.append(li);
+    return li;
+  });
+  ficha.hidden = false;
+  fOpen = true;
+  fichaOpen = true;
+  if (lenis) lenis.stop();
+  document.body.style.overflow = 'hidden';
+  fResize();
+  gsap.fromTo(ficha, { opacity: 0 }, { opacity: 1, duration: 0.35 });
+  fPlay(data);
+  document.getElementById('ficha-close').focus();
+  fCurrent = data;
+}
+let fCurrent = null;
+function closeFicha() {
+  if (!fOpen) return;
+  gsap.to(ficha, { opacity: 0, duration: 0.3, onComplete: () => {
+    ficha.hidden = true;
+    fOpen = false;
+    fichaOpen = false;
+    if (fTl) fTl.kill();
+  } });
+  if (lenis) lenis.start();
+  document.body.style.overflow = '';
+  if (fLast && fLast.focus) fLast.focus();
+}
+document.addEventListener('click', (e) => {
+  const b = e.target.closest('[data-dish]');
+  if (b) openFicha(b.dataset.dish, b);
+});
+document.getElementById('ficha-close').addEventListener('click', closeFicha);
+document.getElementById('ficha-replay').addEventListener('click', () => fCurrent && fPlay(fCurrent));
+document.getElementById('ficha-reservar').addEventListener('click', () => {
+  closeFicha();
+  const y = document.getElementById('reservar').getBoundingClientRect().top + scrollY;
+  setTimeout(() => (lenis ? lenis.scrollTo(y, { duration: 1.4 }) : scrollTo({ top: y, behavior: 'smooth' })), 50);
+});
+addEventListener('keydown', (e) => {
+  if (!fOpen) return;
+  if (e.key === 'Escape') closeFicha();
+  if (e.key === 'Tab') {
+    const f = Array.from(ficha.querySelectorAll('button, a[href]'));
+    const first = f[0], last = f[f.length - 1];
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  }
+});
+addEventListener('resize', () => { if (fRenderer) fResize(); });
+
+/* ---------- Entrada ---------- */
+setBg();
+if (!reduce) {
+  gsap.from('.title-layer', { y: 120, duration: 1.4, ease: 'power3.out' });
+  gsap.from(S, { cz: 14, cy: 4, duration: 1.8, ease: 'power3.out' });
+}
+frame();
+window.__S = S;
+
+
+/* ---------- Carta completa (todos los platos, con su armado) ---------- */
+(function buildFullMenu() {
+  const host = document.getElementById('panel-todo');
+  if (!host) return;
+  const cats = {};
+  Object.entries(FICHAS).forEach(([id, f]) => { (cats[f.cat] = cats[f.cat] || []).push([id, f]); });
+  const esc = (t) => String(t).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  host.innerHTML = '<p class="fm-note">Lo que sale hoy de la cocina. Toca cualquier plato para verlo armarse.</p>' +
+    Object.entries(cats).map(([cat, items]) =>
+      `<section class="fm-cat"><h3 class="fm-title">${esc(cat)}</h3><ul>` +
+      items.map(([id, f]) => {
+        const ing = f.steps.map((st) => st[0]).filter((n) => !/^(Plato|Vaso)\b/.test(n)).join(' · ');
+        return `<li><button class="fm-row" data-dish="${id}"><span class="fm-head"><span class="fm-name">${esc(f.name)}</span><span class="fm-dots" aria-hidden="true"></span><span class="fm-price">${esc(f.price)}</span></span>` +
+          `<span class="fm-desc">${esc(f.desc)}</span><span class="fm-ing"><b>Se arma con:</b> ${esc(ing)}</span><span class="fm-cta">Ver cómo se arma</span></button></li>`;
+      }).join('') + '</ul></section>'
+    ).join('');
+  /* Celular: solo 4 platos por categoría, el resto con "Ver más" (en compu se ve todo) */
+  if (LITE) {
+    host.querySelectorAll('.fm-cat').forEach((sec) => {
+      const lis = [...sec.querySelectorAll('li')];
+      if (lis.length <= 4) return;
+      lis.slice(4).forEach((li) => { li.hidden = true; });
+      const b = document.createElement('button');
+      b.type = 'button'; b.className = 'ver-btn'; b.textContent = `Ver ${lis.length - 4} más`;
+      b.addEventListener('click', () => { lis.forEach((li) => { li.hidden = false; }); b.remove(); ScrollTrigger.refresh(); });
+      sec.appendChild(b);
+    });
+  }
+})();
+</script>
+
+</body></html>
